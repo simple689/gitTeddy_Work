@@ -39,10 +39,5 @@ namespace TeddyNetCore_Engine {
             }
             return result;
         }
-
-        public void test() {
-            loadAssembly(@"E:\svnTeddy_Work_Project_201706\Develop\Tool\Server\", "TeddyNetCore_ServerCenter");
-            invoke("TeddyNetCore_ServerCenter", "Class1", "ShowMessage", "It's a test");
-        }
     }
 }
