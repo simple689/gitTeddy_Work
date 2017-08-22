@@ -41,7 +41,7 @@ namespace TeddyNetCore_Engine {
                 _socket.Bind(new IPEndPoint(IPAddress.Any, _listenPort));
                 _socket.Listen(_maxConnectionNum);
 
-                _controller.callBackLogPrint("/* [开始监听] */");
+                _controller.callBackLogPrint("/* 开始监听 */");
                 startAccept(null); // 在监听Socket上投递一个接受请求。
 
                 _mutex.WaitOne(); // Blocks the current thread to receive incoming messages.
@@ -94,12 +94,12 @@ namespace TeddyNetCore_Engine {
 
                         Interlocked.Increment(ref _connectedSocketNum);
 
-                        string printStr = string.Format("客户 {0} 连入，共有 {1} 个连接。", socket.RemoteEndPoint, _connectedSocketNum);
+                        string printStr = string.Format("连入 {0} ，共有 {1} 个连接。", socket.RemoteEndPoint, _connectedSocketNum);
                         _controller.callBackLogPrint(printStr);
 
                         _controller.callBackSocketSend(ioContext, SocketCmdType.ConnectSuccess, "");
                     } else { // 已经达到最大客户连接数量，在这接受连接，发送“连接已经达到最大数”，然后断开连接
-                        string printStr = string.Format("连接已满，拒绝 {0} 的连接。", socket.RemoteEndPoint);
+                        string printStr = string.Format("连接已满，拒绝连接 {0} 。", socket.RemoteEndPoint);
                         _controller.callBackLogPrint(printStr);
 
                         _controller.callBackSocketSend(ioContext, SocketCmdType.ConnectFail, "连接已经达到最大数!");

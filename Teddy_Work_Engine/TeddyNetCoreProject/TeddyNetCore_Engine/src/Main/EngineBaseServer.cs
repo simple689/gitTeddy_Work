@@ -41,7 +41,6 @@ namespace TeddyNetCore_Engine {
 
         #region callBack
         public bool socketReceive(SocketAsyncEventArgs ioContext) {
-            callBackLogPrint("/* 接收消息 */");
             bool result = true;
             try {
                 string msgReceive = Encoding.UTF8.GetString(ioContext.Buffer, 0, ioContext.BytesTransferred);
@@ -57,13 +56,12 @@ namespace TeddyNetCore_Engine {
                 socketReceiveCmd(ioContext, socketCmdType, socketCmdStr);
             } catch (Exception e) {
                 result = false;
-                _controller.callBackLogPrint(e.Message);
+                callBackLogPrint(e.Message);
             }
             return result;
         }
 
         public bool socketSend(SocketAsyncEventArgs ioContext, SocketCmdType socketCmdType, string socketCmdStr) {
-            callBackLogPrint("/* 发送消息 */");
             bool result = true;
             try {
                 StringBuilder strBuilder = new StringBuilder();
@@ -73,7 +71,7 @@ namespace TeddyNetCore_Engine {
                           .Append("|")
                           .Append(socketCmdStr);
                 string msgSend = strBuilder.ToString();
-                _controller.callBackLogPrint(msgSend);
+                callBackLogPrint("发送消息 = " + msgSend);
 
                 byte[] msgSendByte = Encoding.UTF8.GetBytes(msgSend);
                 ioContext.SetBuffer(msgSendByte, 0, msgSendByte.Length);
@@ -81,7 +79,7 @@ namespace TeddyNetCore_Engine {
                 socket.SendAsync(ioContext); // 投递发送请求，这个函数有可能同步发送出去，这时返回false，并且不会引发SocketAsyncEventArgs.Completed事件
             } catch (Exception e) {
                 result = false;
-                _controller.callBackLogPrint(e.Message);
+                callBackLogPrint(e.Message);
             }
             return result;
         }

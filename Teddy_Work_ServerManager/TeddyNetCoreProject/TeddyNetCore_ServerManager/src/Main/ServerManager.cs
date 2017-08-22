@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Sockets;
+using System.Text;
 using System.Threading;
 using TeddyNetCore_Engine;
 using TeddyNetCore_EngineData;
@@ -13,6 +14,8 @@ namespace TeddyNetCore_ServerManager {
         #endregion
 
         int _listenPort;
+        Thread threadRequestSocket;
+        Thread threadListenSocket;
         Thread thread;
 
         public override void init(EngineBase controller) {
@@ -22,18 +25,49 @@ namespace TeddyNetCore_ServerManager {
             initRequestSocket();
             initListenSocket();
 
-            thread = new Thread(consoleCmd);
-            thread.Start();
+            //thread = new Thread(consoleCmd);
+            //thread.Start();
+            //consoleCmd();
         }
 
         public override void start() {
             base.start();
 
-            _requestSocketController.start();
+            threadRequestSocket = new Thread(_requestSocketController.start);
+            threadRequestSocket.Start();
+            //_requestSocketController.start();
         }
 
         public override void update() {
             base.update();
+
+            Console.Write("->");
+            string cmd = Console.ReadLine();
+            Console.WriteLine("->" + cmd);
+
+            Console.WriteLine("==============================================================");
+            Console.WriteLine("/* 解析命令 */");
+            String[] strAry = cmd.Split(' ');
+            for (int index = 0; index < strAry.Length;) {
+                Console.WriteLine(strAry[index]);
+                int readNum = 1;
+                if (strAry[index].StartsWith("-")) {
+                    StringBuilder strBuilder = new StringBuilder();
+                    for (int readIndex = index + readNum; readIndex < strAry.Length; readIndex++) {
+                        if (strAry[readIndex].StartsWith("-")) {
+                            break;
+                        }
+                        strBuilder.Append(strAry[readIndex])
+                                  .Append(" ");
+                        readNum++;
+                    }
+                    string cmdStr = strBuilder.ToString();
+                    Console.WriteLine(cmdStr);
+                    addMainCmd(strAry[index].Substring(1), cmdStr.Substring(0, cmdStr.Length - 1));
+                }
+                index += readNum;
+            }
+            Console.WriteLine("==============================================================");
         }
 
         public override void stop() {
@@ -58,8 +92,8 @@ namespace TeddyNetCore_ServerManager {
                         break;
                 }
                 //Data_SocketCmd data_SocketCmd = _controllerManagerr._jsonController.deserializeStrToObject<Data_SocketCmd>(socketCmdStr);
-                //_controllerManagerr._dataController._dataDict.Add("Data_SocketCmd", data_SocketCmd);
-                //_controllerManagerr.callBackLogPrint(data_SocketCmd._socketCmdType.ToString());
+                //_dataController._dataDict.Add("Data_SocketCmd", data_SocketCmd);
+                //callBackLogPrint(data_SocketCmd._socketCmdType.ToString());
             } catch (Exception e) {
                 callBackLogPrint(e.Message);
             }
@@ -67,6 +101,7 @@ namespace TeddyNetCore_ServerManager {
 
         #region init
         void initServerConfigBase() {
+            callBackLogPrint("/* 初始化ServerConfig_ServerCenter */");
             try {
                 string path = _resController.getResPathAbsolute(_resController._runPath,
                                                                 ResSubDir.Config,
@@ -74,8 +109,10 @@ namespace TeddyNetCore_ServerManager {
                                                                 ServerType.ServerManager.ToString(),
                                                                 ResNamePostfix.None,
                                                                 ResType.json);
+                callBackLogPrint("ServerConfig_ServerCenter路径 = " + path);
                 callBackLogPrint(path);
                 string file = _fileController.readFile(path);
+                callBackLogPrint("ServerConfig_ServerCenter内容 = ");
                 callBackLogPrint(file);
                 var data = _jsonController.deserializeStrToObject<DataFile_ServerConfig_ServerManager>(file);
                 _dataFileController.addData<DataFile_ServerConfig_ServerManager>(data);
@@ -119,5 +156,15 @@ namespace TeddyNetCore_ServerManager {
             }
         }
         #endregion
+
+        void addMainCmd(string cmdType, string cmdStr) {
+            try {
+                MainCmdType mainCmdType = (MainCmdType)Enum.Parse(typeof(MainCmdType), cmdType, true);
+                _mainCmdDict.Add(mainCmdType, cmdStr);
+            } catch (Exception e) {
+                Console.WriteLine("[Error]" + e.Message);
+                stop();
+            }
+        }
     }
 }

@@ -48,7 +48,7 @@ namespace TeddyNetCore_Engine {
                         Socket socket = (Socket)ioContext.UserToken;
                         if (socket.Available == 0) { // 判断所有需接收的数据是否已经完成
                             string msgReceive = Encoding.UTF8.GetString(ioContext.Buffer, 0, ioContext.BytesTransferred);
-                            string printStr = string.Format("客户 {0} 消息 = {1}", socket.RemoteEndPoint, msgReceive);
+                            string printStr = string.Format("接收消息 {0} = {1}", socket.RemoteEndPoint, msgReceive);
                             _controller.callBackLogPrint(printStr);
 
                             _controller.callBackSocketReceive(ioContext);

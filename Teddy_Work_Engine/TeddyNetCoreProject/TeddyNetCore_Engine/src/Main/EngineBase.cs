@@ -35,11 +35,9 @@ namespace TeddyNetCore_Engine {
         }
 
         public virtual void start() {
-
         }
 
         public virtual void update() {
-
         }
 
         public virtual void stop() {
