@@ -1,0 +1,9 @@
+{
+	"_dllAry": {
+		"ServerCenter": {
+			"_name": "TeddyNetCore_ServerCenter",
+			"_dirDebug": "./../../Teddy_Work_ServerCenter/TeddyNetCoreProject/TeddyNetCore_ServerCenter/bin/Debug/netcoreapp1.1",
+			"_dir": "./"
+		}
+	}
+}

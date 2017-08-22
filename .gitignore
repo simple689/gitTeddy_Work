@@ -1,4 +1,4 @@
-/Teddy_Work_Engine/TeddyNetCoreProject/.vs
+.vs
 /Teddy_Work_Engine/TeddyNetCoreProject/TeddyNetCore_EngineEnum/obj
 /Teddy_Work_Engine/TeddyNetCoreProject/TeddyNetCore_EngineEnum/bin
 /Teddy_Work_Engine/TeddyNetCoreProject/TeddyNetCore_EngineFrame/obj
@@ -9,3 +9,7 @@
 /Teddy_Work_Engine/TeddyNetCoreProject/TeddyNetCore_EngineData/bin
 /Teddy_Work_Engine/TeddyNetCoreProject/TeddyNetCore_Engine/obj
 /Teddy_Work_Engine/TeddyNetCoreProject/TeddyNetCore_Engine/bin
+/Teddy_Work_ServerCenter/TeddyNetCoreProject/TeddyNetCore_EngineFrame/obj
+/Teddy_Work_ServerCenter/TeddyNetCoreProject/TeddyNetCore_EngineFrame/bin
+/Teddy_Work_ServerCenter/TeddyNetCoreProject/TeddyNetCore_ServerCenter/obj
+/Teddy_Work_ServerCenter/TeddyNetCoreProject/TeddyNetCore_ServerCenter/bin

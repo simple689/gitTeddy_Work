@@ -14,6 +14,9 @@ namespace TeddyNetCore_Engine {
             _mainCmdDict = controller._mainCmdDict;
 
             initCallBack();
+
+            initCommonConfig();
+            initHostType();
         }
 
         public override void start() {
@@ -28,7 +31,7 @@ namespace TeddyNetCore_Engine {
             base.stop();
         }
 
-        public void initCallBack() {
+        void initCallBack() {
             callBackSocketReceive += socketReceive;
             callBackSocketSend += socketSend;
         }
@@ -85,7 +88,7 @@ namespace TeddyNetCore_Engine {
         #endregion
 
         #region init
-        public void initCommonConfig() {
+        void initCommonConfig() {
             callBackLogPrint("/* 初始化CommonConfig */");
             try {
                 string path = _resController.getResPathAbsolute(_resController._runPath,
@@ -103,7 +106,7 @@ namespace TeddyNetCore_Engine {
             }
         }
 
-        public void initHostType() {
+        void initHostType() {
             callBackLogPrint("/* 初始化HostType */");
             try {
                 var data = _dataFileController.getData<DataFile_CommonConfig>();

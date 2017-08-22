@@ -10,11 +10,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeddyNetCore_EngineFrame", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeddyNetCore_ServerCenter", "TeddyNetCore_ServerCenter\TeddyNetCore_ServerCenter.csproj", "{603B744C-7C07-4A0B-9458-500D329E2A10}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeddyNetCore_Engine", "..\..\svnTeddy_Work_Engine\TeddyNetCoreProject\TeddyNetCore_Engine\TeddyNetCore_Engine.csproj", "{0D8EDDA5-9CF8-43BC-A815-151812075A6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeddyNetCore_Engine", "..\..\Teddy_Work_Engine\TeddyNetCoreProject\TeddyNetCore_Engine\TeddyNetCore_Engine.csproj", "{0D8EDDA5-9CF8-43BC-A815-151812075A6F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeddyNetCore_EngineData", "..\..\svnTeddy_Work_Engine\TeddyNetCoreProject\TeddyNetCore_EngineData\TeddyNetCore_EngineData.csproj", "{FC5FFD01-6DF2-4B7E-9F6B-DFC03F0A1E8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeddyNetCore_EngineData", "..\..\Teddy_Work_Engine\TeddyNetCoreProject\TeddyNetCore_EngineData\TeddyNetCore_EngineData.csproj", "{FC5FFD01-6DF2-4B7E-9F6B-DFC03F0A1E8F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeddyNetCore_EngineEnum", "..\..\svnTeddy_Work_Engine\TeddyNetCoreProject\TeddyNetCore_EngineEnum\TeddyNetCore_EngineEnum.csproj", "{33A251A7-0227-4D70-9237-EA8DE6E59A65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeddyNetCore_EngineEnum", "..\..\Teddy_Work_Engine\TeddyNetCoreProject\TeddyNetCore_EngineEnum\TeddyNetCore_EngineEnum.csproj", "{33A251A7-0227-4D70-9237-EA8DE6E59A65}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
