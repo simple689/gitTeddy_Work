@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeddyNetCore_Engine", "TeddyNetCore_Engine\TeddyNetCore_Engine.csproj", "{8A4E42F4-2A91-420F-8C69-430BB8F4BEF2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeddyNetCore_EngineData", "TeddyNetCore_EngineData\TeddyNetCore_EngineData.csproj", "{3969E685-A0D4-4194-9E0B-EBC5520D4194}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeddyNetCore_EngineEnum", "TeddyNetCore_EngineEnum\TeddyNetCore_EngineEnum.csproj", "{304651B3-E943-4CA3-8972-484C458FF620}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeddyNetCore_EngineFrame", "TeddyNetCore_EngineFrame\TeddyNetCore_EngineFrame.csproj", "{3DD891C9-A4DF-4EBC-B046-59AE57ABEC33}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4AB19350-B830-47C1-A98A-2D12807660FE} = {4AB19350-B830-47C1-A98A-2D12807660FE}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeddyNetCore_EngineDemo", "TeddyNetCore_EngineDemo\TeddyNetCore_EngineDemo.csproj", "{4AB19350-B830-47C1-A98A-2D12807660FE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A4E42F4-2A91-420F-8C69-430BB8F4BEF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A4E42F4-2A91-420F-8C69-430BB8F4BEF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A4E42F4-2A91-420F-8C69-430BB8F4BEF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A4E42F4-2A91-420F-8C69-430BB8F4BEF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3969E685-A0D4-4194-9E0B-EBC5520D4194}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3969E685-A0D4-4194-9E0B-EBC5520D4194}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3969E685-A0D4-4194-9E0B-EBC5520D4194}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3969E685-A0D4-4194-9E0B-EBC5520D4194}.Release|Any CPU.Build.0 = Release|Any CPU
+		{304651B3-E943-4CA3-8972-484C458FF620}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{304651B3-E943-4CA3-8972-484C458FF620}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{304651B3-E943-4CA3-8972-484C458FF620}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{304651B3-E943-4CA3-8972-484C458FF620}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DD891C9-A4DF-4EBC-B046-59AE57ABEC33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DD891C9-A4DF-4EBC-B046-59AE57ABEC33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DD891C9-A4DF-4EBC-B046-59AE57ABEC33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DD891C9-A4DF-4EBC-B046-59AE57ABEC33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AB19350-B830-47C1-A98A-2D12807660FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AB19350-B830-47C1-A98A-2D12807660FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AB19350-B830-47C1-A98A-2D12807660FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AB19350-B830-47C1-A98A-2D12807660FE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
