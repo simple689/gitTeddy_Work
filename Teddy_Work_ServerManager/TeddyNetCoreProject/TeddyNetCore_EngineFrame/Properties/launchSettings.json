@@ -3,17 +3,17 @@
     "ServerManager_Lan": {
       "commandName": "Project",
       "commandLineArgs": "-DLLType ServerManager -ConfigType Debug -HostType Lan",
-      "workingDirectory": "../../../Teddy_Work_ProjectGame_201706/Develop/Product_ServerManager"
+      "workingDirectory": "./../../../Teddy_Work_Project/Product_ServerManager"
     },
     "ServerManager_Wan": {
       "commandName": "Project",
       "commandLineArgs": "-DLLType ServerManager -ConfigType Debug -HostType Wan",
-      "workingDirectory": "../../../Teddy_Work_ProjectGame_201706/Develop/Product_ServerManager"
+      "workingDirectory": "./../../../Teddy_Work_Project/Product_ServerManager"
     },
     "ServerManager_Local": {
       "commandName": "Project",
       "commandLineArgs": "-DLLType ServerManager -ConfigType Debug -HostType Local",
-      "workingDirectory": "../../../Teddy_Work_ProjectGame_201706/Develop/Product_ServerManager"
+      "workingDirectory": "./../../../Teddy_Work_Project/Product_ServerManager"
     }
   }
 }

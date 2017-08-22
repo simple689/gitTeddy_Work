@@ -16,8 +16,6 @@ namespace TeddyNetCore_ServerPassport {
         public override void init(EngineBase controller) {
             base.init(controller);
 
-            initServerConfigCommon();
-            initHostType();
             initServerConfigBase();
             initRequestSocket();
             initListenSocket();
