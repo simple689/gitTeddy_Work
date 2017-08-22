@@ -1,8 +1,0 @@
-E:\svnTeddy_Work\svnTeddy_Work_Engine\TeddyNetCoreProject\TeddyNetCore_EngineEnum\bin\Release\netcoreapp1.1\TeddyNetCore_EngineEnum.deps.json
-E:\svnTeddy_Work\svnTeddy_Work_Engine\TeddyNetCoreProject\TeddyNetCore_EngineEnum\bin\Release\netcoreapp1.1\TeddyNetCore_EngineEnum.dll
-E:\svnTeddy_Work\svnTeddy_Work_Engine\TeddyNetCoreProject\TeddyNetCore_EngineEnum\bin\Release\netcoreapp1.1\TeddyNetCore_EngineEnum.pdb
-E:\svnTeddy_Work\svnTeddy_Work_Engine\TeddyNetCoreProject\TeddyNetCore_EngineEnum\obj\Release\netcoreapp1.1\TeddyNetCore_EngineEnum.csprojResolveAssemblyReference.cache
-E:\svnTeddy_Work\svnTeddy_Work_Engine\TeddyNetCoreProject\TeddyNetCore_EngineEnum\obj\Release\netcoreapp1.1\TeddyNetCore_EngineEnum.csproj.CoreCompileInputs.cache
-E:\svnTeddy_Work\svnTeddy_Work_Engine\TeddyNetCoreProject\TeddyNetCore_EngineEnum\obj\Release\netcoreapp1.1\TeddyNetCore_EngineEnum.AssemblyInfo.cs
-E:\svnTeddy_Work\svnTeddy_Work_Engine\TeddyNetCoreProject\TeddyNetCore_EngineEnum\obj\Release\netcoreapp1.1\TeddyNetCore_EngineEnum.dll
-E:\svnTeddy_Work\svnTeddy_Work_Engine\TeddyNetCoreProject\TeddyNetCore_EngineEnum\obj\Release\netcoreapp1.1\TeddyNetCore_EngineEnum.pdb
