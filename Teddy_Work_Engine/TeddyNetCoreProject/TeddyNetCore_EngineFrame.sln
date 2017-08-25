@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.14
+VisualStudioVersion = 15.0.26730.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeddyNetCore_Engine", "TeddyNetCore_Engine\TeddyNetCore_Engine.csproj", "{8A4E42F4-2A91-420F-8C69-430BB8F4BEF2}"
 EndProject
@@ -15,6 +15,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeddyNetCore_EngineFrame", 
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeddyNetCore_EngineDemo", "TeddyNetCore_EngineDemo\TeddyNetCore_EngineDemo.csproj", "{4AB19350-B830-47C1-A98A-2D12807660FE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeddyNetCore_EngineServer", "TeddyNetCore_EngineServer\TeddyNetCore_EngineServer.csproj", "{18CDFB83-EA57-4DB5-85A2-1F31D2E9A0F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeddyNet_EngineClient", "..\TeddyNetProject\TeddyNet_EngineClient\TeddyNet_EngineClient.csproj", "{2317E880-EF22-4DD1-B058-7C518BDD4D91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,8 +46,19 @@ Global
 		{4AB19350-B830-47C1-A98A-2D12807660FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AB19350-B830-47C1-A98A-2D12807660FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AB19350-B830-47C1-A98A-2D12807660FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18CDFB83-EA57-4DB5-85A2-1F31D2E9A0F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18CDFB83-EA57-4DB5-85A2-1F31D2E9A0F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18CDFB83-EA57-4DB5-85A2-1F31D2E9A0F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18CDFB83-EA57-4DB5-85A2-1F31D2E9A0F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2317E880-EF22-4DD1-B058-7C518BDD4D91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2317E880-EF22-4DD1-B058-7C518BDD4D91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2317E880-EF22-4DD1-B058-7C518BDD4D91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2317E880-EF22-4DD1-B058-7C518BDD4D91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5312F1CE-96D3-466E-911A-E4FC01651D55}
 	EndGlobalSection
 EndGlobal

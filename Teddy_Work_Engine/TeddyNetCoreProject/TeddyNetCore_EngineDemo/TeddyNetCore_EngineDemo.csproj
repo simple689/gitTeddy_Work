@@ -5,9 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TeddyNetCore_EngineEnum\TeddyNetCore_EngineEnum.csproj" />
-    <ProjectReference Include="..\TeddyNetCore_EngineData\TeddyNetCore_EngineData.csproj" />
-    <ProjectReference Include="..\TeddyNetCore_Engine\TeddyNetCore_Engine.csproj" />
+    <ProjectReference Include="..\TeddyNetCore_EngineServer\TeddyNetCore_EngineServer.csproj" />
   </ItemGroup>
 
 </Project>

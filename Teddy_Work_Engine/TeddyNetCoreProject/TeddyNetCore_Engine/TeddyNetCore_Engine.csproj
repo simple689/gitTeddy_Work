@@ -9,26 +9,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="src\File\FileController - 复制.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="1.1.2" />
     <PackageReference Include="Microsoft.Extensions.FileProviders.Physical" Version="1.1.1" />
     <PackageReference Include="Microsoft.Extensions.PlatformAbstractions" Version="1.1.0" />
-    <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="7.0.7-m61" />
     <PackageReference Include="newtonsoft.json" Version="10.0.3" />
     <PackageReference Include="System.Text.Encoding.CodePages" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="src\Server\" />
     <Folder Include="src\Thread\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\TeddyNetCore_EngineData\TeddyNetCore_EngineData.csproj" />
-    <ProjectReference Include="..\TeddyNetCore_EngineEnum\TeddyNetCore_EngineEnum.csproj" />
   </ItemGroup>
 
 </Project>
