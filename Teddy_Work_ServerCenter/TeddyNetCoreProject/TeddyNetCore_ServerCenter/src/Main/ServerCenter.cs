@@ -1,11 +1,12 @@
 ﻿using System.Net.Sockets;
 using TeddyNetCore_EngineEnum;
-using TeddyNetCore_Engine;
+using TeddyNetCore_EngineCore;
 using TeddyNetCore_EngineData;
 using System;
+using TeddyNetCore_Engine;
 
 namespace TeddyNetCore_ServerCenter {
-    class ServerCenter : EngineBaseServer {
+    class ServerCenter : EngineBase_Server {
         #region Controller
         MySqlController _mySqlController = null;
         ListenSocketController _listenSocketController = null;
