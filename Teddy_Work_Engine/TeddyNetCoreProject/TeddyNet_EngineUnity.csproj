@@ -45,6 +45,21 @@
   <ItemGroup>
     <Compile Include="src\Main\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\Collection\TeddyDictionary.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\Data\DataController.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\File\FileController.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\File\FileParameter.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\Json\JsonController.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\Log\LogController.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\Main\EngineBase.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\Main\EngineBase_Socket.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\Msg\MsgController.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\Res\ResController.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\Socket\CommonSocketController.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\Socket\ListenSocketController.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\Socket\RequestSocketController.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\Socket\SocketContextPool.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\Util\Util.cs" />
     <Compile Include="TeddyNetCore_EngineData\src\DataBase\DataBase.cs" />
     <Compile Include="TeddyNetCore_EngineData\src\DataBase\DataBase_DLL.cs" />
     <Compile Include="TeddyNetCore_EngineData\src\DataBase\DataBase_ListenSocket.cs" />
@@ -67,27 +82,9 @@
     <Compile Include="TeddyNetCore_EngineEnum\src\Enum\SocketCmdEnum.cs" />
     <Compile Include="TeddyNetCore_EngineEnum\src\Util\DisplayAttribute.cs" />
     <Compile Include="TeddyNetCore_EngineEnum\src\Util\EnumUtil.cs" />
-    <Compile Include="TeddyNetCore_Engine\src\Collection\TeddyDictionary.cs" />
-    <Compile Include="TeddyNetCore_Engine\src\Data\DataController.cs" />
-    <Compile Include="TeddyNetCore_Engine\src\DLL\DLLController.cs" />
-    <Compile Include="TeddyNetCore_Engine\src\File\FileController.cs" />
-    <Compile Include="TeddyNetCore_Engine\src\File\FileParameter.cs" />
-    <Compile Include="TeddyNetCore_Engine\src\Json\JsonController.cs" />
-    <Compile Include="TeddyNetCore_Engine\src\Log\LogController.cs" />
-    <Compile Include="TeddyNetCore_Engine\src\Main\EngineBase.cs" />
-    <Compile Include="TeddyNetCore_Engine\src\Main\EngineBaseSocket.cs" />
-    <Compile Include="TeddyNetCore_Engine\src\Main\EngineManager.cs" />
-    <Compile Include="TeddyNetCore_Engine\src\Main\etc.cs" />
-    <Compile Include="TeddyNetCore_Engine\src\Msg\MsgController.cs" />
-    <Compile Include="TeddyNetCore_Engine\src\Res\ResController.cs" />
-    <Compile Include="TeddyNetCore_Engine\src\Socket\CommonSocketController.cs" />
-    <Compile Include="TeddyNetCore_Engine\src\Socket\ListenSocketController.cs" />
-    <Compile Include="TeddyNetCore_Engine\src\Socket\RequestSocketController.cs" />
-    <Compile Include="TeddyNetCore_Engine\src\Socket\SocketContextPool.cs" />
-    <Compile Include="TeddyNetCore_Engine\src\Util\Util.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="TeddyNetCore_Engine\src\Thread\" />
+    <Folder Include="TeddyNetCore_EngineCore\src\Thread\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
