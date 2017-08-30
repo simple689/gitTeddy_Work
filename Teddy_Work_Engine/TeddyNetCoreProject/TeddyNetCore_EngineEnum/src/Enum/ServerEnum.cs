@@ -5,6 +5,7 @@
         ServerFinance,
         ServerGame,
         ServerManager,
-        ServerPassport
+        ServerPassport,
+        ClientSDK
     }
 }

@@ -7,7 +7,7 @@ using TeddyNetCore_EngineEnum;
 namespace TeddyNetCore_EngineCore {
     public class EngineBase {
         public Dictionary<MainCmdType, string> _mainCmdDict = new Dictionary<MainCmdType, string>();
-        public EngineBase _controller;
+        public EngineBase _engineManager;
 
         #region Controller
         public FileController _fileController;
@@ -23,11 +23,11 @@ namespace TeddyNetCore_EngineCore {
         public Func<SocketAsyncEventArgs, SocketCmdType, string, bool> callBackSocketSend;
         #endregion
 
-        public virtual void init(EngineBase controller) {
-            _controller = controller;
+        public virtual void init(EngineBase engineManager) {
+            initLog();
+            _engineManager = engineManager;
 
             initFileAndRes();
-            initLog();
             initJson();
             initData();
         }
@@ -42,8 +42,18 @@ namespace TeddyNetCore_EngineCore {
         }
 
         #region init
+        void initLog() {
+            Console.WriteLine("/* 初始化Log */");
+            try {
+                _logController = new LogController();
+                _logController.init(this);
+            } catch (Exception e) {
+                Console.WriteLine(e.Message);
+            }
+        }
+
         void initFileAndRes() {
-            Console.WriteLine("/* 初始化文件和资源 */");
+            callBackLogPrint("/* 初始化文件和资源 */");
             try {
                 _fileController = new FileController();
                 _fileController.init(this);
@@ -52,25 +62,15 @@ namespace TeddyNetCore_EngineCore {
                 _resController.init(this);
                 _resController._dllPath = _fileController.getPath(PathType.DLL);
                 _resController._runPath = _fileController.getPath(PathType.Run);
-                Console.WriteLine("dll路径 = " + _resController._dllPath);
-                Console.WriteLine("运行路径 = " + _resController._runPath);
-            } catch (Exception e) {
-                callBackLogPrint(e.Message);
-            }
-        }
-
-        void initLog() {
-            Console.WriteLine("/* 初始化Log */");
-            try {
-                _logController = new LogController();
-                _logController.init(this);
+                callBackLogPrint("dll路径 = " + _resController._dllPath);
+                callBackLogPrint("运行路径 = " + _resController._runPath);
             } catch (Exception e) {
                 callBackLogPrint(e.Message);
             }
         }
 
         void initJson() {
-            Console.WriteLine("/* 初始化Json */");
+            callBackLogPrint("/* 初始化Json */");
             try {
                 _jsonController = new JsonController();
                 _jsonController.init(this);
@@ -80,7 +80,7 @@ namespace TeddyNetCore_EngineCore {
         }
 
         void initData() {
-            Console.WriteLine("/* 初始化数据 */");
+            callBackLogPrint("/* 初始化数据 */");
             try {
                 _dataFileController = new DataController<DataFile>();
                 _dataFileController.init(this);
