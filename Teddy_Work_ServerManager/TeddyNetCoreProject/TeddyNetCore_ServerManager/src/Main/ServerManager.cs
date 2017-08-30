@@ -3,11 +3,12 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using TeddyNetCore_Engine;
+using TeddyNetCore_EngineCore;
 using TeddyNetCore_EngineData;
 using TeddyNetCore_EngineEnum;
 
 namespace TeddyNetCore_ServerManager {
-    class ServerManager : EngineBaseServer {
+    class ServerManager : EngineBase_Server {
         #region Controller
         RequestSocketController _requestSocketController = null;
         ListenSocketController _listenSocketController = null;

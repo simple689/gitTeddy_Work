@@ -3,9 +3,10 @@ using System.Net.Sockets;
 using TeddyNetCore_EngineEnum;
 using TeddyNetCore_Engine;
 using TeddyNetCore_EngineData;
+using TeddyNetCore_EngineCore;
 
 namespace TeddyNetCore_ServerPassport {
-    class ServerPassport : EngineBaseServer {
+    class ServerPassport : EngineBase_Server {
         #region Controller
         RequestSocketController _requestSocketController = null;
         ListenSocketController _listenSocketController = null;

@@ -2,8 +2,8 @@
 	"_dllAry": {
 		"ServerManager": {
 			"_name": "TeddyNetCore_ServerManager",
-			"_dirDebug": "/../../Teddy_Work_ServerManager/TeddyNetCoreProject/TeddyNetCore_ServerManager/bin/Debug/netcoreapp1.1",
-			"_dir": "./"
+			"_dirDebug": "/../../Teddy_Work_ServerManager/TeddyNetCoreProject/TeddyNetCore_ServerManager/bin/Debug/netcoreapp2.0",
+			"_dir": "/"
 		}
 	}
 }

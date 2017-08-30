@@ -2,8 +2,8 @@
 	"_dllAry": {
 		"ServerFinance": {
 			"_name": "TeddyNetCore_ServerFinance",
-			"_dirDebug": "/../../Teddy_Work_ServerFinance/TeddyNetCoreProject/TeddyNetCore_ServerFinance/bin/Debug/netcoreapp1.1",
-			"_dir": "./"
+			"_dirDebug": "/../../Teddy_Work_ServerFinance/TeddyNetCoreProject/TeddyNetCore_ServerFinance/bin/Debug/netcoreapp2.0",
+			"_dir": "/"
 		}
 	}
 }

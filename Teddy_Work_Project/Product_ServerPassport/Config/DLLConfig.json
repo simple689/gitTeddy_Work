@@ -2,8 +2,8 @@
   "_dllAry": {
     "ServerPassport": {
       "_name": "TeddyNetCore_ServerPassport",
-      "_dirDebug": "./../../Teddy_Work_ServerPassport/TeddyNetCoreProject/TeddyNetCore_ServerPassport/bin/Debug/netcoreapp1.1",
-      "_dir": "./"
+      "_dirDebug": "/../../Teddy_Work_ServerPassport/TeddyNetCoreProject/TeddyNetCore_ServerPassport/bin/Debug/netcoreapp2.0",
+      "_dir": "/"
     }
   }
 }
