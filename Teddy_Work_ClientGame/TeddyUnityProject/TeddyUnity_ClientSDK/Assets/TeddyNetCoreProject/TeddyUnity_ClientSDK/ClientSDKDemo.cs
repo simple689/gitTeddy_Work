@@ -32,4 +32,21 @@ public class ClientSDKDemo : MonoBehaviour {
     void OnDestroy() {
         clientSDK.stop();
     }
+
+    public void clickEvent(GameObject sender) {
+        switch (sender.name) {
+            case "BtnPlay":
+            Debug.Log("BtnPlay");
+            break;
+            case "BtnShop":
+            Debug.Log("BtnShop");
+            break;
+            case "BtnLeaderboards":
+            Debug.Log("BtnLeaderboards");
+            break;
+            default:
+            Debug.Log("none");
+            break;
+        }
+    }
 }
