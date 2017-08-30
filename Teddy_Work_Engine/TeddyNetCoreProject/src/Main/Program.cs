@@ -6,6 +6,7 @@ namespace TeddyNet_EngineClient {
         static void Main(string[] args) {
             Console.WriteLine(ResSubDir.Config_Base.ToString());
             Console.WriteLine(EnumUtil<ResSubDir>.getDisplayValue(ResSubDir.Config_Base));
+            Console.Read();
         }
     }
 }
