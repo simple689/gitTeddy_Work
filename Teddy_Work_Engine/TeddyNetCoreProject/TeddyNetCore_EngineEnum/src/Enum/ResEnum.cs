@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace TeddyNetCore_EngineEnum {
+﻿namespace TeddyNetCore_EngineEnum {
     public enum ResSubDir {
         None,
         Config,

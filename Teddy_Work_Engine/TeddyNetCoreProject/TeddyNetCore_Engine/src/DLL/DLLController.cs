@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
-using System.Runtime.Loader;
 
-namespace TeddyNetCore_Engine {
+namespace TeddyNetCore_EngineCore {
     public class DLLController {
         EngineBase _controller;
 
@@ -14,8 +13,8 @@ namespace TeddyNetCore_Engine {
             _controller = controller;
         }
 
-        public void loadAssembly(string dllDir, string dllName) { // AssemblyLoadContext
-            Assembly assembly = AssemblyLoadContext.Default.LoadFromAssemblyPath(dllDir + "/" + dllName + ".dll");
+        public void loadAssembly(string dllDir, string dllName) {
+            Assembly assembly = Assembly.LoadFile(dllDir + "/" + dllName + ".dll");
             _assemblyDict.Add(dllName, assembly);
         }
 

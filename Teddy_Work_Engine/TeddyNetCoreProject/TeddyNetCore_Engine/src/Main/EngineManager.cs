@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Text;
+using TeddyNetCore_EngineCore;
 using TeddyNetCore_EngineData;
 using TeddyNetCore_EngineEnum;
 
 namespace TeddyNetCore_Engine {
     public class EngineManager : EngineBase {
+        #region Controller
+        public DLLController _dllController;
+        #endregion
+
         #region DLL
         string _dllTypeStr;
         string _dllDir;
@@ -12,12 +17,15 @@ namespace TeddyNetCore_Engine {
         #endregion
 
         public void init(string[] args) {
+#if NETCOREAPP2_0
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance); // 必须写在第一次 Console.WriteLine 的前面
+#endif
             Console.WriteLine(Encoding.GetEncoding("GB2312"));
             Console.WriteLine(Encoding.GetEncoding("GBK"));
             Console.WriteLine("中文");
 
             initMain(args);
+            initDLL();
             init(this);
         }
 
@@ -58,7 +66,7 @@ namespace TeddyNetCore_Engine {
             }
         }
 
-        #region initMain
+        #region init
         void initMain(string[] args) {
             Console.WriteLine("==============================================================");
             Console.WriteLine("/* 传入参数 */");
@@ -88,6 +96,16 @@ namespace TeddyNetCore_Engine {
                 index += readNum;
             }
             Console.WriteLine("==============================================================");
+        }
+
+        void initDLL() {
+            Console.WriteLine("/* 初始化DLL */");
+            try {
+                _dllController = new DLLController();
+                _dllController.init(this);
+            } catch (Exception e) {
+                callBackLogPrint(e.Message);
+            }
         }
         #endregion
 
