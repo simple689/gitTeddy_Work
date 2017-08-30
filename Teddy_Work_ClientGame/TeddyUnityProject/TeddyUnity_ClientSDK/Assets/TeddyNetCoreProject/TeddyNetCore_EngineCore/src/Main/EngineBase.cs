@@ -60,10 +60,12 @@ namespace TeddyNetCore_EngineCore {
 
                 _resController = new ResController();
                 _resController.init(this);
-                _resController._dllPath = _fileController.getPath(PathType.DLL);
-                _resController._runPath = _fileController.getPath(PathType.Run);
+                _resController._dllPath = _fileController.getPath(FilePathType.DLL);
+                _resController._runPath = _fileController.getPath(FilePathType.Run);
+                _resController._resPath = _resController._runPath;
                 callBackLogPrint("dll路径 = " + _resController._dllPath);
                 callBackLogPrint("运行路径 = " + _resController._runPath);
+                callBackLogPrint("资源路径 = " + _resController._resPath);
             } catch (Exception e) {
                 callBackLogPrint(e.Message);
             }

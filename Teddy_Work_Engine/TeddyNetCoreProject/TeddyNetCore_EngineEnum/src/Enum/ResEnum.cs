@@ -15,7 +15,7 @@
         None,
         DLLConfig,
         CommonConfig,
-        ServerConfig
+        SocketConfig
     }
 
     public enum ResNamePostfix {

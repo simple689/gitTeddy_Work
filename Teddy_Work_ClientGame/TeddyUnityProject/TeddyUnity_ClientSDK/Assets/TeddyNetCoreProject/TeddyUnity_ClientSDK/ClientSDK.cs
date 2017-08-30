@@ -18,13 +18,12 @@ class ClientSDK : EngineBase_Socket {
     public override void init(EngineBase controller) {
         initLog_Unity();
         base.init(controller);
-
-        initRes_Unity();
+        initResPath_Unity();
 
         _host = "127.0.0.1";
         _hostPort = 6989;
-
-
+        initCommonConfig();
+        initHostType();
         initServerConfigBase();
         initRequestSocket();
         initListenSocket();
@@ -80,8 +79,8 @@ class ClientSDK : EngineBase_Socket {
         }
     }
 
-    void initRes_Unity() {
-        callBackLogPrint("/* 初始化资源_Unity */");
+    void initResPath_Unity() {
+        callBackLogPrint("/* 初始化资源路径_Unity */");
         try {
             StringBuilder strBuilder = new StringBuilder();
             strBuilder.Append(_resController._runPath)
@@ -96,19 +95,67 @@ class ClientSDK : EngineBase_Socket {
         }
     }
 
+    void initCommonConfig() {
+        callBackLogPrint("/* 初始化CommonConfig */");
+        try {
+            string path = _resController.getResPathAbsolute(_resController._resPath,
+                                                            ResSubDir.Config,
+                                                            ResNamePrefix.CommonConfig,
+                                                            ResType.json);
+            callBackLogPrint("CommonConfig路径 = " + path);
+            string file = _fileController.readFile(path);
+            callBackLogPrint("CommonConfig内容 = ");
+            callBackLogPrint(file);
+            var data = _jsonController.deserializeStrToObject<DataFile_CommonConfig>(file);
+            _dataFileController.addData<DataFile_CommonConfig>(data);
+        } catch (Exception e) {
+            callBackLogPrint(e.Message);
+        }
+    }
+
+    void initHostType() {
+        callBackLogPrint("/* 初始化HostType */");
+        try {
+            var data = _dataFileController.getData<DataFile_CommonConfig>();
+            _host = data._server._hostLocal;
+            _hostPort = data._server._hostPort;
+            string cmdStr = _mainCmdDict[MainCmdType.HostType];
+            HostType hostType = (HostType)Enum.Parse(typeof(HostType), cmdStr, true);
+            switch (hostType) {
+                case HostType.Lan:
+                _host = data._server._hostLan;
+                break;
+                case HostType.Wan:
+                _host = data._server._hostWan;
+                break;
+                case HostType.Local:
+                _host = data._server._hostLocal;
+                break;
+                default:
+                callBackLogPrint("HostType is error.");
+                break;
+
+            }
+            callBackLogPrint("_host = " + _host);
+            callBackLogPrint("_hostPort = " + _hostPort);
+        } catch (Exception e) {
+            callBackLogPrint(e.Message);
+        }
+    }
+
     void initServerConfigBase() {
         try {
             string path = _resController.getResPathAbsolute(_resController._resPath,
                                                             ResSubDir.Config,
-                                                            ResNamePrefix.ServerConfig,
-                                                            ServerType.ClientSDK.ToString(),
+                                                            ResNamePrefix.SocketConfig,
+                                                            SocketConfigType.ClientSDK.ToString(),
                                                             ResNamePostfix.None,
                                                             ResType.json);
             callBackLogPrint(path);
             string file = _fileController.readFile(path);
             callBackLogPrint(file);
-            var data = _jsonController.deserializeStrToObject<DataFile_ServerConfig_ClientSDK>(file);
-            _dataFileController.addData<DataFile_ServerConfig_ClientSDK>(data);
+            var data = _jsonController.deserializeStrToObject<DataFile_SocketConfig_ClientSDK>(file);
+            _dataFileController.addData<DataFile_SocketConfig_ClientSDK>(data);
         } catch (Exception e) {
             callBackLogPrint(e.Message);
         }
@@ -116,7 +163,7 @@ class ClientSDK : EngineBase_Socket {
 
     public void initRequestSocket() {
         try {
-            var data = _dataFileController.getData<DataFile_ServerConfig_ClientSDK>();
+            var data = _dataFileController.getData<DataFile_SocketConfig_ClientSDK>();
             _requestSocketController = new RequestSocketController();
             _requestSocketController.init(this,
                                           _host,
@@ -129,7 +176,7 @@ class ClientSDK : EngineBase_Socket {
 
     public void initListenSocket() {
         try {
-            var data = _dataFileController.getData<DataFile_ServerConfig_ClientSDK>();
+            var data = _dataFileController.getData<DataFile_SocketConfig_ClientSDK>();
             _listenSocketController = new ListenSocketController();
             _listenSocketController.init(this,
                                          _listenPort,

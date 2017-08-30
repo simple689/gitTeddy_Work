@@ -1,5 +1,5 @@
 ﻿namespace TeddyNetCore_EngineEnum {
-    public enum PathType {
+    public enum FilePathType {
         DLL,
         Run
     }

@@ -104,10 +104,10 @@ namespace TeddyNetCore_ServerManager {
         void initServerConfigBase() {
             callBackLogPrint("/* 初始化ServerConfig_ServerCenter */");
             try {
-                string path = _resController.getResPathAbsolute(_resController._runPath,
+                string path = _resController.getResPathAbsolute(_resController._resPath,
                                                                 ResSubDir.Config,
-                                                                ResNamePrefix.ServerConfig,
-                                                                ServerType.ServerManager.ToString(),
+                                                                ResNamePrefix.SocketConfig,
+                                                                TeddyNetCore_EngineEnum.SocketConfigType.ServerManager.ToString(),
                                                                 ResNamePostfix.None,
                                                                 ResType.json);
                 callBackLogPrint("ServerConfig_ServerCenter路径 = " + path);
@@ -115,8 +115,8 @@ namespace TeddyNetCore_ServerManager {
                 string file = _fileController.readFile(path);
                 callBackLogPrint("ServerConfig_ServerCenter内容 = ");
                 callBackLogPrint(file);
-                var data = _jsonController.deserializeStrToObject<DataFile_ServerConfig_ServerManager>(file);
-                _dataFileController.addData<DataFile_ServerConfig_ServerManager>(data);
+                var data = _jsonController.deserializeStrToObject<DataFile_SocketConfig_ServerManager>(file);
+                _dataFileController.addData<DataFile_SocketConfig_ServerManager>(data);
             } catch (Exception e) {
                 callBackLogPrint(e.Message);
             }
@@ -124,7 +124,7 @@ namespace TeddyNetCore_ServerManager {
 
         public void initRequestSocket() {
             try {
-                var data = _dataFileController.getData<DataFile_ServerConfig_ServerManager>();
+                var data = _dataFileController.getData<DataFile_SocketConfig_ServerManager>();
                 _requestSocketController = new RequestSocketController();
                 _requestSocketController.init(this,
                                               _host,
@@ -137,7 +137,7 @@ namespace TeddyNetCore_ServerManager {
 
         public void initListenSocket() {
             try {
-                var data = _dataFileController.getData<DataFile_ServerConfig_ServerManager>();
+                var data = _dataFileController.getData<DataFile_SocketConfig_ServerManager>();
                 _listenSocketController = new ListenSocketController();
                 _listenSocketController.init(this,
                                              _listenPort,

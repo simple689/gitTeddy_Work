@@ -60,18 +60,18 @@ namespace TeddyNetCore_ServerCenter {
         void initServerConfigBase() {
             callBackLogPrint("/* 初始化ServerConfig_ServerCenter */");
             try {
-                string path = _resController.getResPathAbsolute(_resController._runPath,
+                string path = _resController.getResPathAbsolute(_resController._resPath,
                                                                 ResSubDir.Config,
-                                                                ResNamePrefix.ServerConfig,
-                                                                ServerType.ServerCenter.ToString(),
+                                                                ResNamePrefix.SocketConfig,
+                                                                TeddyNetCore_EngineEnum.SocketConfigType.ServerCenter.ToString(),
                                                                 ResNamePostfix.None,
                                                                 ResType.json);
                 callBackLogPrint("ServerConfig_ServerCenter路径 = " + path);
                 string file = _fileController.readFile(path);
                 callBackLogPrint("ServerConfig_ServerCenter内容 = ");
                 callBackLogPrint(file);
-                var data = _jsonController.deserializeStrToObject<DataFile_ServerConfig_ServerCenter>(file);
-                _dataFileController.addData<DataFile_ServerConfig_ServerCenter>(data);
+                var data = _jsonController.deserializeStrToObject<DataFile_SocketConfig_ServerCenter>(file);
+                _dataFileController.addData<DataFile_SocketConfig_ServerCenter>(data);
             } catch (Exception e) {
                 callBackLogPrint(e.Message);
             }
@@ -82,7 +82,7 @@ namespace TeddyNetCore_ServerCenter {
             try {
                 _mySqlController = new MySqlController();
                 _mySqlController.init(this);
-                var data = _dataFileController.getData<DataFile_ServerConfig_ServerCenter>();
+                var data = _dataFileController.getData<DataFile_SocketConfig_ServerCenter>();
                 _mySqlController.setConnectionStr(_host,
                                                   data._mySql._port,
                                                   data._mySql._user,
@@ -97,7 +97,7 @@ namespace TeddyNetCore_ServerCenter {
         void initListenSocket() {
             callBackLogPrint("/* 初始化ListenSocket */");
             try {
-                var data = _dataFileController.getData<DataFile_ServerConfig_ServerCenter>();
+                var data = _dataFileController.getData<DataFile_SocketConfig_ServerCenter>();
                 _listenSocketController = new ListenSocketController();
                 _listenSocketController.init(this,
                                              _hostPort,

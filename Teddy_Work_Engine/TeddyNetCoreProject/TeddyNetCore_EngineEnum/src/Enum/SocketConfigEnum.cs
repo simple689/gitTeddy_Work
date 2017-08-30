@@ -1,6 +1,5 @@
 ﻿namespace TeddyNetCore_EngineEnum {
-    public enum ServerType {
-        ServerBase,
+    public enum SocketConfigType {
         ServerCenter,
         ServerFinance,
         ServerGame,

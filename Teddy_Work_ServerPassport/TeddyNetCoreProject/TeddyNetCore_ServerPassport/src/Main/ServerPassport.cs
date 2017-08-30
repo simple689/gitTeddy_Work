@@ -64,17 +64,17 @@ namespace TeddyNetCore_ServerPassport {
         #region init
         void initServerConfigBase() {
             try {
-                string path = _resController.getResPathAbsolute(_resController._runPath,
+                string path = _resController.getResPathAbsolute(_resController._resPath,
                                                                 ResSubDir.Config,
-                                                                ResNamePrefix.ServerConfig,
-                                                                ServerType.ServerPassport.ToString(),
+                                                                ResNamePrefix.SocketConfig,
+                                                                TeddyNetCore_EngineEnum.SocketConfigType.ServerPassport.ToString(),
                                                                 ResNamePostfix.None,
                                                                 ResType.json);
                 callBackLogPrint(path);
                 string file = _fileController.readFile(path);
                 callBackLogPrint(file);
-                var data = _jsonController.deserializeStrToObject<DataFile_ServerConfig_ServerPassport>(file);
-                _dataFileController.addData<DataFile_ServerConfig_ServerPassport>(data);
+                var data = _jsonController.deserializeStrToObject<DataFile_SocketConfig_ServerPassport>(file);
+                _dataFileController.addData<DataFile_SocketConfig_ServerPassport>(data);
             } catch (Exception e) {
                 callBackLogPrint(e.Message);
             }
@@ -82,7 +82,7 @@ namespace TeddyNetCore_ServerPassport {
 
         public void initRequestSocket() {
             try {
-                var data = _dataFileController.getData<DataFile_ServerConfig_ServerPassport>();
+                var data = _dataFileController.getData<DataFile_SocketConfig_ServerPassport>();
                 _requestSocketController = new RequestSocketController();
                 _requestSocketController.init(this,
                                               _host,
@@ -95,7 +95,7 @@ namespace TeddyNetCore_ServerPassport {
 
         public void initListenSocket() {
             try {
-                var data = _dataFileController.getData<DataFile_ServerConfig_ServerPassport>();
+                var data = _dataFileController.getData<DataFile_SocketConfig_ServerPassport>();
                 _listenSocketController = new ListenSocketController();
                 _listenSocketController.init(this,
                                              _listenPort,

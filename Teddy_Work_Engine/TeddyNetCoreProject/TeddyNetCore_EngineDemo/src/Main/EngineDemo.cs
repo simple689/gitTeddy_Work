@@ -25,7 +25,7 @@ namespace TeddyNetCore_EngineDemo {
         #region test
         void test() {
             try {
-                string path = _resController._runPath;
+                string path = _resController._resPath;
                 path += _resController.getResPathRelative(ResSubDir.Config,
                                                           ResNamePrefix.CommonConfig,
                                                           ResType.json);

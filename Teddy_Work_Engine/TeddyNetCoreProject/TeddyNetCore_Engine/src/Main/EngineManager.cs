@@ -113,7 +113,7 @@ namespace TeddyNetCore_Engine {
         void initMainDLL() {
             callBackLogPrint("/* 初始化主DLL */");
             try {
-                string path = _resController.getResPathAbsolute(_resController._runPath,
+                string path = _resController.getResPathAbsolute(_resController._resPath,
                                                                 ResSubDir.Config,
                                                                 ResNamePrefix.DLLConfig,
                                                                 ResType.json);
@@ -127,7 +127,7 @@ namespace TeddyNetCore_Engine {
 
                 _dllTypeStr = _mainCmdDict[MainCmdType.DLLType];
                 _dllName = data._dllAry[_dllTypeStr]._name;
-                _dllDir = _resController._runPath;
+                _dllDir = _resController._resPath;
 
                 string configStr = _mainCmdDict[MainCmdType.ConfigType];
                 ConfigType configType = (ConfigType)Enum.Parse(typeof(ConfigType), configStr, true);

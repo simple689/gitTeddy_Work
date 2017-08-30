@@ -16,7 +16,7 @@ namespace TeddyNetCore_Engine {
         void initCommonConfig() {
             callBackLogPrint("/* 初始化CommonConfig */");
             try {
-                string path = _resController.getResPathAbsolute(_resController._runPath,
+                string path = _resController.getResPathAbsolute(_resController._resPath,
                                                                 ResSubDir.Config,
                                                                 ResNamePrefix.CommonConfig,
                                                                 ResType.json);

@@ -13,14 +13,14 @@ namespace TeddyNetCore_EngineCore {
             _controller = controller;
         }
 
-        public string getPath(PathType pathType) {
+        public string getPath(FilePathType pathType) {
             string path = "";
             try {
                 switch (pathType) {
-                    case PathType.DLL:
+                    case FilePathType.DLL:
                         path = Environment.CurrentDirectory; // 获取和设置当前目录(该进程从中启动的目录)的完全限定目录。
                         break;
-                    case PathType.Run:
+                    case FilePathType.Run:
                         path = Directory.GetCurrentDirectory(); // 获取应用程序的当前工作目录。bat路径
                         break;
                     default:
