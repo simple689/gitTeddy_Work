@@ -41,6 +41,8 @@ class ClientSDK : EngineBase_Socket {
 
     public override void stop() {
         base.stop();
+        _requestSocketController.stop();
+        _listenSocketController.stop();
     }
 
     public override void socketReceiveCmd(SocketAsyncEventArgs ioContext, SocketCmdType socketCmdType, string socketCmdStr) {

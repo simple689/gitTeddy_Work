@@ -15,5 +15,21 @@ public class ClientSDKDemo : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         clientSDK.update();
-	}
+    }
+
+    void OnGui() {
+
+    }
+
+    void Reset() {
+
+    }
+
+    void OnDisable() {
+
+    }
+
+    void OnDestroy() {
+        clientSDK.stop();
+    }
 }
