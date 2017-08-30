@@ -5,7 +5,7 @@ using TeddyNetCore_EngineData;
 using TeddyNetCore_EngineEnum;
 
 namespace TeddyNetCore_EngineCore {
-    public abstract class EngineBase {
+    public class EngineBase {
         public Dictionary<MainCmdType, string> _mainCmdDict = new Dictionary<MainCmdType, string>();
         public EngineBase _controller;
 
