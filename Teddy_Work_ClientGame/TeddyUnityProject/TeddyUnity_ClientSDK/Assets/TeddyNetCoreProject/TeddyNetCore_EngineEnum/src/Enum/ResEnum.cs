@@ -5,7 +5,10 @@
         [Display(Name = "Config/Base")]
         Config_Base,
         [Display(Name = "Config/Center")]
-        Config_Center
+        Config_Center,
+        Assets,
+        Product_ClientSDK,
+        Product_ClientGame
     }
 
     public enum ResNamePrefix {

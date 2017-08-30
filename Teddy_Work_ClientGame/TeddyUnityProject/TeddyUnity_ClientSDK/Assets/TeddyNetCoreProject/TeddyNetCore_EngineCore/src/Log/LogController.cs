@@ -13,7 +13,7 @@ namespace TeddyNetCore_EngineCore {
             _controller.callBackLogPrint += println;
         }
 
-        void println(string str) {
+        public virtual void println(string str) {
             try {
                 Console.WriteLine(str);
             } catch (Exception e) {

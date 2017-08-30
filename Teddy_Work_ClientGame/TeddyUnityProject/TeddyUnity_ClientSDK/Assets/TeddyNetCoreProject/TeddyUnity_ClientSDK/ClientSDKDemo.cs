@@ -2,18 +2,18 @@
 using UnityEngine;
 
 public class ClientSDKDemo : MonoBehaviour {
-    EngineBase engineBase;
     ClientSDK clientSDK;
 
     // Use this for initialization
     void Start () {
-        engineBase = new EngineBase();
+        Debug.Log("/* 游戏开启 ClientSDKDemo */");
         clientSDK = new ClientSDK();
-        clientSDK.init(engineBase);
+        clientSDK.init(new EngineBase());
+        clientSDK.start();
     }
 
     // Update is called once per frame
     void Update () {
-		
+        clientSDK.update();
 	}
 }
