@@ -88,6 +88,7 @@
     <Compile Include="Assets\TeddyNetCoreProject\TeddyNetCore_EngineCore\src\File\FileController.cs" />
     <Compile Include="Assets\TeddyNetCoreProject\TeddyNetCore_EngineCore\src\File\FileParameter.cs" />
     <Compile Include="Assets\TeddyNetCoreProject\TeddyNetCore_EngineCore\src\Json\JsonController.cs" />
+    <Compile Include="Assets\TeddyNetCoreProject\TeddyUnity_EngineCore\UI\UIController.cs" />
     <Compile Include="Assets\TeddyNetCoreProject\TeddyNetCore_EngineCore\src\Log\LogController.cs" />
     <Compile Include="Assets\TeddyNetCoreProject\TeddyNetCore_EngineCore\src\Main\EngineBase.cs" />
     <Compile Include="Assets\TeddyNetCoreProject\TeddyNetCore_EngineCore\src\Main\EngineBase_Socket.cs" />
@@ -121,11 +122,13 @@
     <Compile Include="Assets\TeddyNetCoreProject\TeddyNetCore_EngineEnum\src\Enum\SocketConfigEnum.cs" />
     <Compile Include="Assets\TeddyNetCoreProject\TeddyNetCore_EngineEnum\src\Util\DisplayAttribute.cs" />
     <Compile Include="Assets\TeddyNetCoreProject\TeddyNetCore_EngineEnum\src\Util\EnumUtil.cs" />
+    <Compile Include="Assets\TeddyNetCoreProject\TeddyUnity_EngineCore\Log\LogController_Unity.cs" />
     <Compile Include="Assets\TeddyNetCoreProject\TeddyUnity_ClientSDK\ClientSDK.cs" />
+    <Compile Include="Assets\TeddyNetCoreProject\TeddyUnity_ClientSDK\etc.cs" />
     <Compile Include="Assets\TeddyNetCoreProject\TeddyUnity_ClientSDK\ClientSDK_ClickEvent.cs" />
     <Compile Include="Assets\TeddyNetCoreProject\TeddyUnity_ClientSDK\ClientSDKDemo.cs" />
-    <Compile Include="Assets\TeddyNetCoreProject\TeddyUnity_ClientSDK\Log\LogController_Unity.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
 </Project>

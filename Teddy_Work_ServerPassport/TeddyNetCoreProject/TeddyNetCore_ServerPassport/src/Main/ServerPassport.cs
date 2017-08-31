@@ -17,7 +17,7 @@ namespace TeddyNetCore_ServerPassport {
         public override void init(EngineBase controller) {
             base.init(controller);
 
-            initServerConfigBase();
+            initSocketConfig();
             initRequestSocket();
             initListenSocket();
         }
@@ -62,12 +62,12 @@ namespace TeddyNetCore_ServerPassport {
         }
 
         #region init
-        void initServerConfigBase() {
+        void initSocketConfig() {
             try {
                 string path = _resController.getResPathAbsolute(_resController._resPath,
                                                                 ResSubDir.Config,
                                                                 ResNamePrefix.SocketConfig,
-                                                                TeddyNetCore_EngineEnum.SocketConfigType.ServerPassport.ToString(),
+                                                                SocketConfigType.ServerPassport.ToString(),
                                                                 ResNamePostfix.None,
                                                                 ResType.json);
                 callBackLogPrint(path);

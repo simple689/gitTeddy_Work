@@ -22,7 +22,7 @@ namespace TeddyNetCore_ServerManager {
         public override void init(EngineBase controller) {
             base.init(controller);
 
-            initServerConfigBase();
+            initSocketConfig();
             initRequestSocket();
             initListenSocket();
 
@@ -101,13 +101,13 @@ namespace TeddyNetCore_ServerManager {
         }
 
         #region init
-        void initServerConfigBase() {
+        void initSocketConfig() {
             callBackLogPrint("/* 初始化ServerConfig_ServerCenter */");
             try {
                 string path = _resController.getResPathAbsolute(_resController._resPath,
                                                                 ResSubDir.Config,
                                                                 ResNamePrefix.SocketConfig,
-                                                                TeddyNetCore_EngineEnum.SocketConfigType.ServerManager.ToString(),
+                                                                SocketConfigType.ServerManager.ToString(),
                                                                 ResNamePostfix.None,
                                                                 ResType.json);
                 callBackLogPrint("ServerConfig_ServerCenter路径 = " + path);

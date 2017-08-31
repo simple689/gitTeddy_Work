@@ -4,11 +4,13 @@ using System.Text;
 using TeddyNetCore_EngineCore;
 using TeddyNetCore_EngineData;
 using TeddyNetCore_EngineEnum;
+using TeddyUnity_EngineCore;
 using UnityEngine;
 
 class ClientSDK : EngineBase_Socket {
     #region Controller
     LogController_Unity _logController_Unity = null;
+    UIController _uiController = null;
     RequestSocketController _requestSocketController = null;
     ListenSocketController _listenSocketController = null;
     #endregion
@@ -24,7 +26,9 @@ class ClientSDK : EngineBase_Socket {
         _hostPort = 6989;
         initCommonConfig();
         initHostType();
-        initServerConfigBase();
+        initSocketConfig();
+
+        initUI();
         initRequestSocket();
         initListenSocket();
     }
@@ -145,7 +149,7 @@ class ClientSDK : EngineBase_Socket {
         }
     }
 
-    void initServerConfigBase() {
+    void initSocketConfig() {
         try {
             string path = _resController.getResPathAbsolute(_resController._resPath,
                                                             ResSubDir.Config,
@@ -163,7 +167,11 @@ class ClientSDK : EngineBase_Socket {
         }
     }
 
-    public void initRequestSocket() {
+    void initUI() {
+        throw new NotImplementedException();
+    }
+
+    void initRequestSocket() {
         try {
             var data = _dataFileController.getData<DataFile_SocketConfig_ClientSDK>();
             _requestSocketController = new RequestSocketController();
@@ -176,7 +184,7 @@ class ClientSDK : EngineBase_Socket {
         }
     }
 
-    public void initListenSocket() {
+    void initListenSocket() {
         try {
             var data = _dataFileController.getData<DataFile_SocketConfig_ClientSDK>();
             _listenSocketController = new ListenSocketController();

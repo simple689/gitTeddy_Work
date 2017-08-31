@@ -15,7 +15,7 @@ namespace TeddyNetCore_ServerCenter {
         public override void init(EngineBase controller) {
             base.init(controller);
 
-            initServerConfigBase();
+            initSocketConfig();
             initMySql();
             initListenSocket();
         }
@@ -57,13 +57,13 @@ namespace TeddyNetCore_ServerCenter {
         }
 
         #region init
-        void initServerConfigBase() {
+        void initSocketConfig() {
             callBackLogPrint("/* 初始化ServerConfig_ServerCenter */");
             try {
                 string path = _resController.getResPathAbsolute(_resController._resPath,
                                                                 ResSubDir.Config,
                                                                 ResNamePrefix.SocketConfig,
-                                                                TeddyNetCore_EngineEnum.SocketConfigType.ServerCenter.ToString(),
+                                                                SocketConfigType.ServerCenter.ToString(),
                                                                 ResNamePostfix.None,
                                                                 ResType.json);
                 callBackLogPrint("ServerConfig_ServerCenter路径 = " + path);
