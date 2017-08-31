@@ -2,7 +2,7 @@
 using TeddyNetCore_EngineCore;
 
 namespace TeddyNetCore_ServerGame {
-    class ServerGame : EngineBase_Server {
+    class ServerGame : EngineBase_Socket {
         public override void init(EngineBase controller) {
             base.init(controller);
         }

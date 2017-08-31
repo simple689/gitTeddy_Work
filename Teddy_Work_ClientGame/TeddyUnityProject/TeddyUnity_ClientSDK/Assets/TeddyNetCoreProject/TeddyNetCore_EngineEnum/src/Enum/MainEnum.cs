@@ -12,8 +12,9 @@
     }
 
     public enum HostType {
+        None,
+        Local,
         Lan,
-        Wan,
-        Local
+        Wan
     }
 }

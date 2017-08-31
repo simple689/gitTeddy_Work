@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Sockets;
 using System.Text;
+using TeddyNetCore_EngineData;
 using TeddyNetCore_EngineEnum;
 
 namespace TeddyNetCore_EngineCore {
@@ -12,6 +13,9 @@ namespace TeddyNetCore_EngineCore {
             base.init(controller);
             _mainCmdDict = controller._mainCmdDict;
 
+            initCommonConfig();
+            initHostType();
+
             initCallBack();
         }
 
@@ -22,6 +26,62 @@ namespace TeddyNetCore_EngineCore {
 
         public virtual void socketReceiveCmd(SocketAsyncEventArgs ioContext, SocketCmdType socketCmdType, string socketCmdStr) {
         }
+
+        #region init
+        void initCommonConfig() {
+            callBackLogPrint("/* 初始化CommonConfig */");
+            try {
+                string path = _resController.getResPathAbsolute(_resController._resPath,
+                                                                ResSubDir.Config,
+                                                                ResNamePrefix.CommonConfig,
+                                                                ResType.json);
+                callBackLogPrint("CommonConfig路径 = " + path);
+                string file = _fileController.readFile(path);
+                callBackLogPrint("CommonConfig内容 = ");
+                callBackLogPrint(file);
+                var data = _jsonController.deserializeStrToObject<DataFile_CommonConfig>(file);
+                _dataFileController.addData<DataFile_CommonConfig>(data);
+            } catch (Exception e) {
+                callBackLogPrint(e.Message);
+            }
+        }
+
+        void initHostType() {
+            callBackLogPrint("/* 初始化HostType */");
+            try {
+                var data = _dataFileController.getData<DataFile_CommonConfig>();
+                _host = data._server._hostLocal;
+                _hostPort = data._server._hostPort;
+                string hostTypeStr = data._server._hostType.ToString();
+                if (_mainCmdDict != null && _mainCmdDict.ContainsKey(MainCmdType.HostType)) {
+                    hostTypeStr = _mainCmdDict[MainCmdType.HostType];
+                }
+                HostType hostType = (HostType)Enum.Parse(typeof(HostType), hostTypeStr, true);
+                switch (hostType) {
+                    case HostType.None:
+                    _host = data._server._hostLocal;
+                    break;
+                    case HostType.Local:
+                    _host = data._server._hostLocal;
+                    break;
+                    case HostType.Lan:
+                    _host = data._server._hostLan;
+                    break;
+                    case HostType.Wan:
+                    _host = data._server._hostWan;
+                    break;
+                    default:
+                    callBackLogPrint("HostType is error.");
+                    break;
+
+                }
+                callBackLogPrint("_host = " + _host);
+                callBackLogPrint("_hostPort = " + _hostPort);
+            } catch (Exception e) {
+                callBackLogPrint(e.Message);
+            }
+        }
+        #endregion
 
         #region callBack
         public bool socketReceive(SocketAsyncEventArgs ioContext) {

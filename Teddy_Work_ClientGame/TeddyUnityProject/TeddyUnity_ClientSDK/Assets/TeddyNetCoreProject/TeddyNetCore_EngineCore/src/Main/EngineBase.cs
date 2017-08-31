@@ -23,11 +23,11 @@ namespace TeddyNetCore_EngineCore {
         public Func<SocketAsyncEventArgs, SocketCmdType, string, bool> callBackSocketSend;
         #endregion
 
-        public virtual void init(EngineBase engineManager) {
+        public virtual void init(EngineBase engineManager, string resSubDir = "/") {
             initLog();
             _engineManager = engineManager;
 
-            initFileAndRes();
+            initFileAndRes(resSubDir);
             initJson();
             initData();
         }
@@ -52,7 +52,7 @@ namespace TeddyNetCore_EngineCore {
             }
         }
 
-        void initFileAndRes() {
+        void initFileAndRes(string resSubDir) {
             callBackLogPrint("/* 初始化文件和资源 */");
             try {
                 _fileController = new FileController();
@@ -62,7 +62,7 @@ namespace TeddyNetCore_EngineCore {
                 _resController.init(this);
                 _resController._dllPath = _fileController.getPath(FilePathType.DLL);
                 _resController._runPath = _fileController.getPath(FilePathType.Run);
-                _resController._resPath = _resController._runPath;
+                _resController._resPath = _resController._runPath + resSubDir;
                 callBackLogPrint("dll路径 = " + _resController._dllPath);
                 callBackLogPrint("运行路径 = " + _resController._runPath);
                 callBackLogPrint("资源路径 = " + _resController._resPath);

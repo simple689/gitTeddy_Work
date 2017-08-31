@@ -6,10 +6,6 @@ namespace TeddyUnity_EngineCore {
 
         public void init(EngineBase controller) {
             _controller = controller;
-            initCallBack();
-        }
-
-        void initCallBack() {
         }
     }
 }

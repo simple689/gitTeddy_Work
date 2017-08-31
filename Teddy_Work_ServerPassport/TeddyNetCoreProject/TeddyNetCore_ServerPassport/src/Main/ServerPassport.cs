@@ -6,7 +6,7 @@ using TeddyNetCore_EngineData;
 using TeddyNetCore_EngineCore;
 
 namespace TeddyNetCore_ServerPassport {
-    class ServerPassport : EngineBase_Server {
+    class ServerPassport : EngineBase_Socket {
         #region Controller
         RequestSocketController _requestSocketController = null;
         ListenSocketController _listenSocketController = null;

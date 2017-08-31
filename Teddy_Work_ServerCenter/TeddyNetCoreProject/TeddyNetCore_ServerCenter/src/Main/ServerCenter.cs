@@ -6,7 +6,7 @@ using System;
 using TeddyNetCore_Engine;
 
 namespace TeddyNetCore_ServerCenter {
-    class ServerCenter : EngineBase_Server {
+    class ServerCenter : EngineBase_Socket {
         #region Controller
         MySqlController _mySqlController = null;
         ListenSocketController _listenSocketController = null;

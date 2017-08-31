@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using TeddyNetCore_EngineCore;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,10 +10,10 @@ public class ClientSDKDemo : MonoBehaviour {
     void Start () {
         Debug.Log("/* 游戏开启 ClientSDKDemo */");
         clientSDK = new ClientSDK();
-        clientSDK.init(new EngineBase());
+        clientSDK.init(new EngineBase(), "/Assets/Product_ClientSDK");
         clientSDK.start();
 
-        initClickEvent();
+        //initClickEvent();
     }
 
     // Update is called once per frame

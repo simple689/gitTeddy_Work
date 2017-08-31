@@ -17,15 +17,10 @@ class ClientSDK : EngineBase_Socket {
 
     int _listenPort;
 
-    public override void init(EngineBase controller) {
+    public override void init(EngineBase controller, string resSubDir = "/") {
         initLog_Unity();
-        base.init(controller);
-        initResPath_Unity();
+        base.init(controller, resSubDir);
 
-        _host = "127.0.0.1";
-        _hostPort = 6989;
-        initCommonConfig();
-        initHostType();
         initSocketConfig();
 
         initUI();
@@ -85,70 +80,6 @@ class ClientSDK : EngineBase_Socket {
         }
     }
 
-    void initResPath_Unity() {
-        callBackLogPrint("/* 初始化资源路径_Unity */");
-        try {
-            StringBuilder strBuilder = new StringBuilder();
-            strBuilder.Append(_resController._runPath)
-                      .Append("/")
-                      .Append(ResSubDir.Assets)
-                      .Append("/")
-                      .Append(ResSubDir.Product_ClientSDK);
-            _resController._resPath = strBuilder.ToString();
-            callBackLogPrint("资源路径 = " + _resController._resPath);
-        } catch (Exception e) {
-            callBackLogPrint(e.Message);
-        }
-    }
-
-    void initCommonConfig() {
-        callBackLogPrint("/* 初始化CommonConfig */");
-        try {
-            string path = _resController.getResPathAbsolute(_resController._resPath,
-                                                            ResSubDir.Config,
-                                                            ResNamePrefix.CommonConfig,
-                                                            ResType.json);
-            callBackLogPrint("CommonConfig路径 = " + path);
-            string file = _fileController.readFile(path);
-            callBackLogPrint("CommonConfig内容 = ");
-            callBackLogPrint(file);
-            var data = _jsonController.deserializeStrToObject<DataFile_CommonConfig>(file);
-            _dataFileController.addData<DataFile_CommonConfig>(data);
-        } catch (Exception e) {
-            callBackLogPrint(e.Message);
-        }
-    }
-
-    void initHostType() {
-        callBackLogPrint("/* 初始化HostType */");
-        try {
-            var data = _dataFileController.getData<DataFile_CommonConfig>();
-            _host = data._server._hostLocal;
-            _hostPort = data._server._hostPort;
-            string cmdStr = _mainCmdDict[MainCmdType.HostType];
-            HostType hostType = (HostType)Enum.Parse(typeof(HostType), cmdStr, true);
-            switch (hostType) {
-                case HostType.Lan:
-                _host = data._server._hostLan;
-                break;
-                case HostType.Wan:
-                _host = data._server._hostWan;
-                break;
-                case HostType.Local:
-                _host = data._server._hostLocal;
-                break;
-                default:
-                callBackLogPrint("HostType is error.");
-                break;
-
-            }
-            callBackLogPrint("_host = " + _host);
-            callBackLogPrint("_hostPort = " + _hostPort);
-        } catch (Exception e) {
-            callBackLogPrint(e.Message);
-        }
-    }
-
     void initSocketConfig() {
         try {
             string path = _resController.getResPathAbsolute(_resController._resPath,
@@ -168,7 +99,12 @@ class ClientSDK : EngineBase_Socket {
     }
 
     void initUI() {
-        throw new NotImplementedException();
+        try {
+            _uiController = new UIController();
+            _uiController.init(this);
+        } catch (Exception e) {
+            callBackLogPrint(e.Message);
+        }
     }
 
     void initRequestSocket() {
