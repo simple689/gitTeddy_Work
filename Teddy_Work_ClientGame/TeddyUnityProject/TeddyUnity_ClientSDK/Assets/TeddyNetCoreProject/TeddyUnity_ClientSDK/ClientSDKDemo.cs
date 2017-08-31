@@ -13,7 +13,7 @@ public class ClientSDKDemo : MonoBehaviour {
         clientSDK.init(new EngineBase(), "/Assets/Product_ClientSDK");
         clientSDK.start();
 
-        //initClickEvent();
+        initClickEvent();
     }
 
     // Update is called once per frame
