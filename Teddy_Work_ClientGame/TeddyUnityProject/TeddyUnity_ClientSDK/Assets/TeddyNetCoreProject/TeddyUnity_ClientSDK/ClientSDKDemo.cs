@@ -47,10 +47,9 @@ public class ClientSDKDemo : MonoBehaviour {
         Toggle[] toggles = GetComponents<Toggle>();
         foreach (Toggle toggle in toggles) {
             toggle.onValueChanged.AddListener(delegate (bool isOn) {
-                //            //onValueChangedEvent(isOn, toggle.gameObject);
+                //onValueChangedEvent(isOn, toggle.gameObject);
             });
         }
-
     }
 
     //protected abstract void OnClickButtons(GameObject sender);
