@@ -38,28 +38,19 @@ public class ClientSDKDemo : MonoBehaviour {
     }
 
     void initClickEvent() {
-        Hashtable btnNameHashtable = new Hashtable();
-        btnNameHashtable.Add("BtnNewGame", "Button");
-        btnNameHashtable.Add("BtnContinue", "Button");
-        btnNameHashtable.Add("BtnChallenge", "Button");
-        btnNameHashtable.Add("BtnMoreGame", "Button");
-        btnNameHashtable.Add("BtnRank", "Button");
-        btnNameHashtable.Add("BtnMusic", "Toggle");
-        btnNameHashtable.Add("BtnSound", "Toggle");
-        foreach (DictionaryEntry btnInfo in btnNameHashtable) {
-            GameObject btnObj = GameObject.Find(btnInfo.Key as string);
-            if (btnInfo.Value as string == "Button") {
-                Button btn = btnObj.GetComponent<Button>();
-                btn.onClick.AddListener(delegate () {
-                    onClickEvent(btnObj);
-                });
-            } else if (btnInfo.Value as string == "Toggle") {
-                Toggle btn = btnObj.GetComponent<Toggle>();
-                btn.onValueChanged.AddListener(delegate (bool isOn) {
-                    //onValueChangedEvent(isOn, btnObj);
-                });
-            }
+        Button[] btns = GetComponents<Button>();
+        foreach (Button btn in btns) {
+            btn.onClick.AddListener(delegate () {
+                onClickEvent(btn.gameObject);
+            });
         }
+        Toggle[] toggles = GetComponents<Toggle>();
+        foreach (Toggle toggle in toggles) {
+            toggle.onValueChanged.AddListener(delegate (bool isOn) {
+                //            //onValueChangedEvent(isOn, toggle.gameObject);
+            });
+        }
+
     }
 
     //protected abstract void OnClickButtons(GameObject sender);
