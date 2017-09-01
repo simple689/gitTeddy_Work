@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using TeddyNetCore_EngineCore;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ClientSDKDemo : MonoBehaviour {
     ClientSDK clientSDK;
 
-    // Use this for initialization
     void Start () {
         Debug.Log("/* 游戏开启 ClientSDKDemo */");
         clientSDK = new ClientSDK();
@@ -16,7 +17,6 @@ public class ClientSDKDemo : MonoBehaviour {
         initClickEvent();
     }
 
-    // Update is called once per frame
     void Update () {
         clientSDK.update();
     }
@@ -38,23 +38,20 @@ public class ClientSDKDemo : MonoBehaviour {
     }
 
     void initClickEvent() {
+        GameObject[] objs = SceneManager.GetActiveScene().GetRootGameObjects();
         Button[] btns = GetComponents<Button>();
         foreach (Button btn in btns) {
-            btn.onClick.AddListener(delegate () {
+            UnityAction call = delegate () {
                 onClickEvent(btn.gameObject);
-            });
-        }
-        Toggle[] toggles = GetComponents<Toggle>();
-        foreach (Toggle toggle in toggles) {
-            toggle.onValueChanged.AddListener(delegate (bool isOn) {
-                //onValueChangedEvent(isOn, toggle.gameObject);
-            });
+            };
+            btn.onClick.AddListener(call);
         }
     }
 
     //protected abstract void OnClickButtons(GameObject sender);
 
     public void onClickEvent(GameObject sender) {
+        Debug.Log("onClickEvent");
         switch (sender.name) {
             case "BtnPlay":
             Debug.Log("BtnPlay");
