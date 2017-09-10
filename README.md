@@ -1,1 +1,1 @@
-# gitTeddy_Work master.branch ZhaoHuan Teddy
+# gitTeddy_Work
