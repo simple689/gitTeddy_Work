@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0290FA20-111D-4C9E-972E-34211329DD93}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TeddyNet_EngineClient</RootNamespace>
+    <AssemblyName>TeddyNet_EngineClient</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\Main\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\Collection\TeddyDictionary.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\Data\DataController.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\File\FileController.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\File\FileParameter.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\Json\JsonController.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\Json\JsonCreationConverter.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\Log\LogController.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\Main\EngineBase.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\Main\EngineBase_Socket.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\Main\etc.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\Msg\MsgController.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\Res\ResController.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\Socket\CommonSocketController.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\Socket\ListenSocketController.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\Socket\RequestSocketController.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\Socket\SocketContextPool.cs" />
+    <Compile Include="TeddyNetCore_EngineCore\src\Util\Util.cs" />
+    <Compile Include="TeddyNetCore_EngineData\src\Data\DataBase.cs" />
+    <Compile Include="TeddyNetCore_EngineData\src\Data\DataFile.cs" />
+    <Compile Include="TeddyNetCore_EngineData\src\Data_DLL\DataBase_DLL.cs" />
+    <Compile Include="TeddyNetCore_EngineData\src\Data_DLL\DataFile_DLLConfig.cs" />
+    <Compile Include="TeddyNetCore_EngineData\src\Data_Plot\DataBase_Plot.cs" />
+    <Compile Include="TeddyNetCore_EngineData\src\Data_Plot\DataBase_PlotStep.cs" />
+    <Compile Include="TeddyNetCore_EngineData\src\Data_Plot\DataBase_PlotStepConfig.cs" />
+    <Compile Include="TeddyNetCore_EngineData\src\Data_Plot\DataFile_PlotConfig.cs" />
+    <Compile Include="TeddyNetCore_EngineData\src\Data_Plot\DataFile_PlotSection.cs" />
+    <Compile Include="TeddyNetCore_EngineData\src\Data_Plot\Data_PlotType\DataBase_PlotSound.cs" />
+    <Compile Include="TeddyNetCore_EngineData\src\Data_Plot\Data_PlotType\DataBase_PlotUI.cs" />
+    <Compile Include="TeddyNetCore_EngineData\src\Data_Socket\DataBase_Client.cs" />
+    <Compile Include="TeddyNetCore_EngineData\src\Data_Socket\DataBase_ListenSocket.cs" />
+    <Compile Include="TeddyNetCore_EngineData\src\Data_Socket\DataBase_MySql.cs" />
+    <Compile Include="TeddyNetCore_EngineData\src\Data_Socket\DataBase_RequestSocket.cs" />
+    <Compile Include="TeddyNetCore_EngineData\src\Data_Socket\DataBase_Server.cs" />
+    <Compile Include="TeddyNetCore_EngineData\src\Data_Socket\DataBase_SocketCmd.cs" />
+    <Compile Include="TeddyNetCore_EngineData\src\Data_Socket\DataFile_CommonConfig.cs" />
+    <Compile Include="TeddyNetCore_EngineData\src\Data_Socket\DataFile_SocketConfig_ClientSDK.cs" />
+    <Compile Include="TeddyNetCore_EngineData\src\Data_Socket\DataFile_SocketConfig_ServerCenter.cs" />
+    <Compile Include="TeddyNetCore_EngineData\src\Data_Socket\DataFile_SocketConfig_ServerFinance.cs" />
+    <Compile Include="TeddyNetCore_EngineData\src\Data_Socket\DataFile_SocketConfig_ServerGame.cs" />
+    <Compile Include="TeddyNetCore_EngineData\src\Data_Socket\DataFile_SocketConfig_ServerManager.cs" />
+    <Compile Include="TeddyNetCore_EngineData\src\Data_Socket\DataFile_SocketConfig_ServerPassport.cs" />
+    <Compile Include="TeddyNetCore_EngineData\src\Data_UI\DataFile_UIConfig.cs" />
+    <Compile Include="TeddyNetCore_EngineEnum\src\Enum\FileEnum.cs" />
+    <Compile Include="TeddyNetCore_EngineEnum\src\Enum\MainEnum.cs" />
+    <Compile Include="TeddyNetCore_EngineEnum\src\Enum\PlotEnum.cs" />
+    <Compile Include="TeddyNetCore_EngineEnum\src\Enum\ResEnum.cs" />
+    <Compile Include="TeddyNetCore_EngineEnum\src\Enum\SocketCmdEnum.cs" />
+    <Compile Include="TeddyNetCore_EngineEnum\src\Enum\SocketConfigEnum.cs" />
+    <Compile Include="TeddyNetCore_EngineEnum\src\Util\DisplayAttribute.cs" />
+    <Compile Include="TeddyNetCore_EngineEnum\src\Util\EnumUtil.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="TeddyNetCore_EngineCore\src\Thread\" />
+    <Folder Include="TeddyNetCore_EngineData\src\Data_Sound\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExternalNetCoreProject\Newtonsoft.Json\Src\Newtonsoft.Json\Newtonsoft.Json.csproj">
+      <Project>{a97a4cb3-51ad-4605-ba9f-d6861e582c85}</Project>
+      <Name>Newtonsoft.Json</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

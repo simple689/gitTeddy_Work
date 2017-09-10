@@ -1,0 +1,9 @@
+{
+	"_dllAry": {
+		"ServerGame": {
+			"_name": "TeddyNetCore_ServerGame",
+			"_dirDebug": "/../../Teddy_Work_ServerGame/TeddyNetCoreProject/TeddyNetCore_ServerGame/bin/Debug/netcoreapp2.0",
+			"_dir": "/"
+		}
+	}
+}

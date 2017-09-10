@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TeddyNetCore_EngineEnum\TeddyNetCore_EngineEnum.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="src\Data_Sound\" />
+  </ItemGroup>
+
+</Project>

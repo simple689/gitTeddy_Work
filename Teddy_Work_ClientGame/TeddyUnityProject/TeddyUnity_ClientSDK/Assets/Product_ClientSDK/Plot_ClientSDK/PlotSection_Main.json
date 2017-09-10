@@ -1,0 +1,78 @@
+{
+	"_version": 0,
+	"_plotStep": {
+		"_config": {
+			"_timeStart": 0
+		},
+		"_plotList": [
+			{
+				"_name": "mainUI",
+				"_plotType": "PlotUI",
+				"_timeStart": 0,
+				"_ui": {
+					"_name": "uiMain"
+				}
+			}, {
+				"_name": "mainSound",
+				"_plotType": "PlotSound",
+				"_timeStart": 0,
+				"_sound": {
+					"_name": "soundMain",
+					"_isFadeIn": false,
+					"_isFadeOut": false
+				}
+			}, {
+				"_name": "mainEvent",
+				"_plotType": "PlotEvent",
+				"_timeStart": 6,
+				"_event": {
+					"_nextStep": "start"
+				}
+			}
+		],
+		"_plotStepDict": {
+			"start": {
+				"_config": {
+					"_timeStart": 0
+				},
+				"_plotList": [
+					{
+						"_name": "startUI",
+						"_plotType": "PlotUI",
+						"_ui": {
+							"_name": "uiStart"
+						}
+					}, {
+						"_name": "startSound",
+						"_plotType": "PlotSound",
+						"_sound": {
+							"_name": "soundStart"
+						}
+					}
+				],
+				"_plotStepDict": ""
+			},
+			"load": {
+				"_config": {
+					"_timeStart": 0
+				},
+				"_plotList": [
+					{
+						"_name": "loadtUI",
+						"_plotType": "PlotUI",
+						"_ui": {
+							"_name": "uiLoad"
+						}
+					}, {
+						"_name": "loadSound",
+						"_plotType": "PlotSound",
+						"_sound": {
+							"_name": "soundLoad"
+						}
+					}
+				],
+				"_plotStepDict": {}
+			}
+		}
+	}
+}

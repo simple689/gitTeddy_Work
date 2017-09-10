@@ -1,0 +1,119 @@
+﻿// HTTP
+//========================
+80	86
+
+// SSH
+//========================
+22	28
+
+// Tomcat
+//========================
+8080	8086
+8000	8089
+$ sudo update-alternatives --config java
+$ sudo update-alternatives --config javac
+tail -f catalina.out 
+
+// SVN
+//========================
+sudo mkdir repository
+sudo chmod -R 777 repository/
+sudo svnadmin create repository/
+cd repository/
+sudo chmod -R 777 db/
+cd conf/
+sudo vim svnserve.conf 
+sudo vim passwd 
+sudo vim authz 
+svnserve -d -r /home/teddy/TeddyServer_Work/svn/ --listen-host 192.168.1.6
+ps aux | grep svnserveteddy
+
+
+group_admin = ZhaoHuan,WangShuai
+@group_admin = rw
+
+//
+//========================
+repository
+svnTeddy_Work_Info
+svnTeddy_Work_Project_201706
+svnShane_Work
+
+//
+//========================
+<VirtualHost *:86>	
+	ScriptAliasMatch ^(/.+?\.git.*)$ /usr/lib/git-core/git-http-backend$1
+	<Location "/test.git">
+		DAV on
+		AuthType Basic
+		AuthName "Git"
+		AuthUserFile /etc/apache2/dav_git.passwd
+		Require valid-user
+	</Location>
+</VirtualHost>
+
+<VirtualHost *:86>
+	ServerAdmin git@localhost
+	DocumentRoot /home/teddy/TeddyServer_Work/git
+	ErrorLog ${APACHE_LOG_DIR}/error_git.log
+	CustomLog ${APACHE_LOG_DIR}/access_git.log combined
+
+	SetEnv GIT_PROJECT_ROOT /home/teddy/TeddyServer_Work/git
+	SetEnv GIT_HTTP_EXPORT_ALL
+	
+	<Files "git-http-backend">
+		AuthType Basic
+		AuthName "Git Access"
+		AuthUserFile /etc/apache2/dav_git.passwd
+		Require valid-user
+		Order deny,allow
+		Deny from env=AUTHREQUIRED
+		Satisfy any
+	</Files>
+	<Location />
+		AuthType Basic
+		AuthName "Git Repositories"
+		AuthUserFile /etc/apache2/dav_git.passwd
+		Require valid-user
+		Order allow,deny
+		Allow from all
+	</Location>
+	ScriptAlias / /usr/lib/git-core/git-http-backend/
+	RewriteEngine On
+	RewriteCond %{QUERY_STRING} service=git-receive-pack [OR]
+	RewriteCond %{REQUEST_URI} /git-receive-pack$
+	RewriteRule ^/ - [E=AUTHREQUIRED]
+</VirtualHost>
+
+<VirtualHost *:86>
+	ServerAdmin you@example.com
+	ServerName RukaCode
+	SetEnv GIT_PROJECT_ROOT /opt/git
+	SetEnv GIT_HTTP_EXPORT_ALL
+	SSLEngine on
+	SSLCertificateFile /opt/sites_conf/apache.crt
+	SSLCertificateKeyFile /opt/sites_conf/apache.key
+	DocumentRoot /opt/git
+	<Files "git-http-backend">
+		AuthType Basic
+		AuthName "Git Access"
+		AuthUserFile /opt/sites_conf/htpasswd
+		Require valid-user
+		Order deny,allow
+		Deny from env=AUTHREQUIRED
+		Satisfy any
+	</Files>
+	<Location />
+		AuthType Basic
+		AuthName "Git Repositories"
+		AuthUserFile /opt/sites_conf/htpasswd
+		Require valid-user
+		Order allow,deny
+		Allow from all
+	</Location>
+	ScriptAlias / /usr/lib/git-core/git-http-backend/
+	RewriteEngine On
+	RewriteCond %{QUERY_STRING} service=git-receive-pack [OR]
+	RewriteCond %{REQUEST_URI} /git-receive-pack$
+	RewriteRule ^/ - [E=AUTHREQUIRED]
+</VirtualHost>

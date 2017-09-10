@@ -1,0 +1,92 @@
+﻿svn checkout svn://192.168.1.6/repositoryTeddy_Work_Unity
+svn add * -- force
+svn commit -m ""
+
+/usr/local/bin/idea
+
+sudo mysql -uroot -p
+
+<%
+String str;
+Main main = new Main();
+%>
+<%=main.getVersion() %>
+
+
+<%@ page language="java" import="TeddyServer.Project_201706.Main" pageEncoding="ISO-8859-1"%>
+
+/root/.nuget/NuGet/NuGet.Config
+
+
+// 
+//========================
+Updating C# dependencies...
+Platform: linux, x86_64, name=ubuntu, version=17.04
+
+Downloading package 'Mono Runtime (Linux / x64)' (6943 KB) .................... Done!
+Downloading package 'Mono Framework Assemblies' (5892 KB) .................... Done!
+Downloading package 'OmniSharp (Mono 4.6)' (12219 KB) .................... Done!
+
+Installing package 'Mono Runtime (Linux / x64)'
+Installing package 'Mono Framework Assemblies'
+Installing package 'OmniSharp (Mono 4.6)'
+
+Finished
+[WARNING]: The current Linux distribution 'ubuntu' version '17.04' is not currently supported by the .NET Core debugger. Debugging will not be available.
+If 'ubuntu' is binary compatible with a Linux distribution officially supported by .NET Core, you may be able to resolve this by setting 'csharp.fallbackDebuggerLinuxRuntimeId' in 'File->Preferences->Settings' and restarting VS Code.
+
+// 
+//========================
+/etc/os-release
+VERSION_ID
+17.04
+
+// 
+//========================
+mysql -u root -p
+ps -ef | grep mysql
+netstat -tap | grep mysql
+netstat -an | grep 3306
+
+debian.cnf
+conf.d
+mysql.conf.d
+
+3312
+
+// 
+//========================
+netstat -apn | grep 30832
+
+// 
+//========================
+install-package newtonsoft.json 
+
+// 
+//========================
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="7.0.7-m61" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TeddyNetCoreWork_CommonEnum\TeddyNetCoreWork_CommonEnum.csproj" />
+    <ProjectReference Include="..\TeddyNetCoreWork_CommonTool\TeddyNetCoreWork_CommonTool.csproj" />
+  </ItemGroup>
+
+</Project>
+
+// 
+//========================
+shutdown -r now
+traceroute -d 61.136.101.xxx
+ssh teddy@111.199.202.81 -p 28
+sudo apt-get -f install gtk2-engines-pixbuf libvte9 libgnome2-gconf-perl libexpect-perl libnet-proxy-perl libyaml-perl libcrypt-cbc-perl libcrypt-blowfish-perl libgtk2-gladexml-perl libgtk2-ex-simple-list-perl libnet-arp-perl libossp-uuid-perl libcrypt-rijndael-perl libgtk2-unique-perl libio-stty-perl gconf-service libglade2-0 libunique-1.0-0 libossp-uuid16 libvte-common gconf-service-backend
+
+ 
