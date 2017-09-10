@@ -1,0 +1,19 @@
+{
+  "profiles": {
+    "ServerPassport_Lan": {
+      "commandName": "Project",
+      "commandLineArgs": "-DLLType ServerPassport -ConfigType Debug -HostType Lan",
+      "workingDirectory": "./../../../Teddy_Work_Project/Product_ServerPassport"
+    },
+    "ServerPassport_Wan": {
+      "commandName": "Project",
+      "commandLineArgs": "-DLLType ServerPassport -ConfigType Debug -HostType Wan",
+      "workingDirectory": "./../../../Teddy_Work_Project/Product_ServerPassport"
+    },
+    "ServerPassport_Local": {
+      "commandName": "Project",
+      "commandLineArgs": "-DLLType ServerPassport -ConfigType Debug -HostType Local",
+      "workingDirectory": "./../../../Teddy_Work_Project/Product_ServerPassport"
+    }
+  }
+}

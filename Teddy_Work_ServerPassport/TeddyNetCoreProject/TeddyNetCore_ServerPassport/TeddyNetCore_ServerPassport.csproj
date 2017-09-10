@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <AssemblyName>TeddyNetCore_ServerPassport</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Teddy_Work_Engine\TeddyNetCoreProject\TeddyNetCore_Engine\TeddyNetCore_Engine.csproj" />
+  </ItemGroup>
+
+</Project>
