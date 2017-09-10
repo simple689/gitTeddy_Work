@@ -1,0 +1,26 @@
+﻿// 
+//========================
+git branch
+git branch -a
+git branch -r
+
+git fetch origin <远程分支名> // 此时会在本地就有分支了
+
+git checkout master
+git checkout -b master
+git checkout -b <本地分支名> origin/<远程分支名> // 本地新建分支, 把此分支放入其中
+
+git clean  -d  -fx .
+
+git pull <远程主机名> <远程分支名>:<本地分支名>
+git pull
+git pull origin master:master
+
+git status
+
+git checkout . #本地所有修改的。没有的提交的，都返回到原来的状态
+git stash #把所有没有提交的修改暂存到stash里面。可用git stash pop回复。
+git reset --hard HASH #返回到某个节点，不保留修改。
+git reset --soft HASH #返回到某个节点。保留修改
+
+
