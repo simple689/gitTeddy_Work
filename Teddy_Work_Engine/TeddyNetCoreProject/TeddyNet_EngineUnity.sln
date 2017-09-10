@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Newtonsoft.Json", "..\ExternalNetCoreProject\Newtonsoft.Json\Src\Newtonsoft.Json\Newtonsoft.Json.csproj", "{A97A4CB3-51AD-4605-BA9F-D6861E582C85}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Newtonsoft.Json.Tests", "..\ExternalNetCoreProject\Newtonsoft.Json\Src\Newtonsoft.Json.Tests\Newtonsoft.Json.Tests.csproj", "{462EA9B9-8532-4330-9160-DF3450C70880}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Newtonsoft.Json.TestConsole", "..\ExternalNetCoreProject\Newtonsoft.Json\Src\Newtonsoft.Json.TestConsole\Newtonsoft.Json.TestConsole.csproj", "{3CC9C2DF-CD0A-4096-BF46-B4AFDF0147D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeddyNet_EngineUnity", "TeddyNet_EngineUnity.csproj", "{0290FA20-111D-4C9E-972E-34211329DD93}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External", "External", "{5AFB3C63-BA89-4B06-8EE3-3542EF1A7656}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Newtonsoft.Json", "Newtonsoft.Json", "{B7467C56-0A1A-4D11-A17F-36FB36D5CB9D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A97A4CB3-51AD-4605-BA9F-D6861E582C85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A97A4CB3-51AD-4605-BA9F-D6861E582C85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A97A4CB3-51AD-4605-BA9F-D6861E582C85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A97A4CB3-51AD-4605-BA9F-D6861E582C85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{462EA9B9-8532-4330-9160-DF3450C70880}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{462EA9B9-8532-4330-9160-DF3450C70880}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{462EA9B9-8532-4330-9160-DF3450C70880}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{462EA9B9-8532-4330-9160-DF3450C70880}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CC9C2DF-CD0A-4096-BF46-B4AFDF0147D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CC9C2DF-CD0A-4096-BF46-B4AFDF0147D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CC9C2DF-CD0A-4096-BF46-B4AFDF0147D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CC9C2DF-CD0A-4096-BF46-B4AFDF0147D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0290FA20-111D-4C9E-972E-34211329DD93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0290FA20-111D-4C9E-972E-34211329DD93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0290FA20-111D-4C9E-972E-34211329DD93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0290FA20-111D-4C9E-972E-34211329DD93}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A97A4CB3-51AD-4605-BA9F-D6861E582C85} = {B7467C56-0A1A-4D11-A17F-36FB36D5CB9D}
+		{462EA9B9-8532-4330-9160-DF3450C70880} = {B7467C56-0A1A-4D11-A17F-36FB36D5CB9D}
+		{3CC9C2DF-CD0A-4096-BF46-B4AFDF0147D2} = {B7467C56-0A1A-4D11-A17F-36FB36D5CB9D}
+		{B7467C56-0A1A-4D11-A17F-36FB36D5CB9D} = {5AFB3C63-BA89-4B06-8EE3-3542EF1A7656}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7B3FDAFD-F30C-477F-86A8-52251B0E012A}
+	EndGlobalSection
+EndGlobal
