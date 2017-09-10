@@ -1,9 +1,0 @@
-{
-	"_server": {
-		"_hostLan": "192.168.1.6",
-		"_hostWan": "114.250.193.22",
-		"_hostLocal": "127.0.0.1",
-		"_hostType": "Local",
-		"_hostPort": 6989
-	}
-}

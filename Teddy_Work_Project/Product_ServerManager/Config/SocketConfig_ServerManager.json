@@ -1,9 +1,0 @@
-{	
-	"_requestSocket": {
-		"_bufferSize": 1024
-	},
-	"_listenSocket": {
-		"_maxConnectionNum": 100,
-		"_bufferSize": 1024
-	}
-}
