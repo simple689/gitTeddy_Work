@@ -1,0 +1,19 @@
+{
+  "profiles": {
+    "ServerFinance_Lan": {
+      "commandName": "Project",
+      "commandLineArgs": "-DLLType ServerFinance -ConfigType Debug -HostType Lan",
+      "workingDirectory": "./../../../Teddy_Work_Project/Product_ServerFinance"
+    },
+    "ServerFinance_Wan": {
+      "commandName": "Project",
+      "commandLineArgs": "-DLLType ServerFinance -ConfigType Debug -HostType Wan",
+      "workingDirectory": "./../../../Teddy_Work_Project/Product_ServerFinance"
+    },
+    "ServerFinance_Local": {
+      "commandName": "Project",
+      "commandLineArgs": "-DLLType ServerFinance -ConfigType Debug -HostType Local",
+      "workingDirectory": "./../../../Teddy_Work_Project/Product_ServerFinance"
+    }
+  }
+}
