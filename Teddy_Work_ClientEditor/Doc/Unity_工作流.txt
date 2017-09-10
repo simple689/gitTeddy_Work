@@ -1,0 +1,19 @@
+- 版本管理：目前是Git，主要是branch/tag/submodule功能比较好使。
+注意工程需要打开visible meta和force text serialization。
+正在考虑美术资源部分是否改回SVN...
+
+- 编辑器：VS。
+
+- 服务器：目前是PHP+skynet都有，通信是protobuf。短链接正在从WWW切换到WebRequest，长链接是KCP/TCP
+
+- 常用插件 TextMeshPro 字体锐利而且各种描边、阴影效果不费
+DOTween 性能压力小，链式写法很爽快
+I2 多语言解决方案 （在插件基础上我们做了一套直接读取外部csv更新的修改，方便翻译）
+TexturePacker 比UGUI那套更容易自定义，譬如我们支持了 Polygon mode sprites 和部分重叠的资源检查
+UniWebView 内嵌网页
+LogViewer 在真机上直接显示
+LoguFrame 部分项目使用了作为MVVM框架
+Dynamic Shadow Projector影子的一套解决方案，见 利用Projector实现动态阴影
+
+实现了常用控件封装、命令行出包、一些运行时性能检查工具、资源检查工具等，
+项目可以定期扔uwa测试一下
